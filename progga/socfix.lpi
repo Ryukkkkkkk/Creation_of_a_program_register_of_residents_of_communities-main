@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectOptions>
+    <Version Value="12"/>
+    <PathDelim Value="\"/>
+    <General>
+      <Flags>
+        <SaveClosedFiles Value="False"/>
+        <SaveOnlyProjectUnits Value="True"/>
+        <CompatibilityMode Value="True"/>
+      </Flags>
+      <SessionStorage Value="InProjectDir"/>
+      <AutoCreateForms Value="False"/>
+      <Title Value="SocFix"/>
+      <Scaled Value="True"/>
+      <UseAppBundle Value="False"/>
+      <ResourceType Value="res"/>
+      <UseXPManifest Value="True"/>
+      <XPManifest>
+        <DpiAware Value="True/PM"/>
+        <TextName Value="SocFix"/>
+        <TextDesc Value="Програма для сільських рад та об&apos;єднаних територіальних громад в Україні."/>
+      </XPManifest>
+      <Icon Value="0"/>
+      <Resources Count="1">
+        <Resource_0 FileName="socfix.ico" Type="ICON" ResourceName="SOCFIX"/>
+      </Resources>
+    </General>
+    <i18n>
+      <EnableI18N LFM="False"/>
+    </i18n>
+    <VersionInfo>
+      <UseVersionInfo Value="True"/>
+      <AutoIncrementBuild Value="True"/>
+      <BuildNr Value="2"/>
+      <Language Value="0422"/>
+      <CharSet Value="04B0"/>
+      <StringTable ProductVersion="0.0.0.0"/>
+    </VersionInfo>
+    <BuildModes Count="3">
+      <Item1 Name="Default" Default="True"/>
+      <Item2 Name="Release_Win64">
+        <CompilerOptions>
+          <Version Value="11"/>
+          <PathDelim Value="\"/>
+          <Target>
+            <Filename Value="Bin\SocFix_$(TargetOS)"/>
+          </Target>
+          <SearchPaths>
+            <IncludeFiles Value="$(ProjOutDir)"/>
+            <Libraries Value="Bin\Lib64"/>
+            <OtherUnitFiles Value="Forms;Units"/>
+            <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+          </SearchPaths>
+          <CodeGeneration>
+            <SmartLinkUnit Value="True"/>
+            <TargetCPU Value="x86_64"/>
+            <TargetOS Value="win64"/>
+            <Optimizations>
+              <OptimizationLevel Value="3"/>
+            </Optimizations>
+          </CodeGeneration>
+          <Linking>
+            <Debugging>
+              <GenerateDebugInfo Value="False"/>
+            </Debugging>
+            <LinkSmart Value="True"/>
+            <Options>
+              <Win32>
+                <GraphicApplication Value="True"/>
+              </Win32>
+            </Options>
+          </Linking>
+          <Other>
+            <Verbosity>
+              <ShoLineNum Value="True"/>
+            </Verbosity>
+          </Other>
+        </CompilerOptions>
+      </Item2>
+      <Item3 Name="Release_Win32">
+        <CompilerOptions>
+          <Version Value="11"/>
+          <PathDelim Value="\"/>
+          <Target>
+            <Filename Value="Bin\SocFix_$(TargetOS)"/>
+          </Target>
+          <SearchPaths>
+            <IncludeFiles Value="$(ProjOutDir)"/>
+            <Libraries Value="Bin\Lib32"/>
+            <OtherUnitFiles Value="Forms;Units"/>
+            <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+          </SearchPaths>
+          <CodeGeneration>
+            <SmartLinkUnit Value="True"/>
+            <TargetCPU Value="i386"/>
+            <TargetOS Value="win32"/>
+            <Optimizations>
+              <OptimizationLevel Value="3"/>
+            </Optimizations>
+          </CodeGeneration>
+          <Linking>
+            <Debugging>
+              <GenerateDebugInfo Value="False"/>
+            </Debugging>
+            <LinkSmart Value="True"/>
+            <Options>
+              <Win32>
+                <GraphicApplication Value="True"/>
+              </Win32>
+            </Options>
+          </Linking>
+          <Other>
+            <Verbosity>
+              <ShoLineNum Value="True"/>
+            </Verbosity>
+            <CustomOptions Value="-dWIN32_MODE"/>
+          </Other>
+        </CompilerOptions>
+      </Item3>
+    </BuildModes>
+    <PublishOptions>
+      <Version Value="2"/>
+      <DestinationDirectory Value="E:\Google Диск\Programming\Lazarus\SocFix"/>
+    </PublishOptions>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes Count="1">
+        <Mode0 Name="default"/>
+      </Modes>
+    </RunParams>
+    <RequiredPackages Count="9">
+      <Item1>
+        <PackageName Value="laz_fpspreadsheet_dataset"/>
+      </Item1>
+      <Item2>
+        <PackageName Value="laz_fpspreadsheet"/>
+      </Item2>
+      <Item3>
+        <PackageName Value="laz_fpspreadsheetexport_visual"/>
+      </Item3>
+      <Item4>
+        <PackageName Value="DateTimeCtrls"/>
+      </Item4>
+      <Item5>
+        <PackageName Value="RunTimeTypeInfoControls"/>
+      </Item5>
+      <Item6>
+        <PackageName Value="lazreport"/>
+      </Item6>
+      <Item7>
+        <PackageName Value="FCL"/>
+      </Item7>
+      <Item8>
+        <PackageName Value="SQLDBLaz"/>
+      </Item8>
+      <Item9>
+        <PackageName Value="LCL"/>
+      </Item9>
+    </RequiredPackages>
+    <Units Count="20">
+      <Unit0>
+        <Filename Value="socfix.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="SocFix"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="uMain.pp"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmMain"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="udm.pp"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="dm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="Forms\uPassword.pp"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmPassword"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="Forms\uPopulation.pp"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmPopulation"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="Forms\uPopulation_Edit.pp"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmPopulation_Edit"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="Forms\uUsers.pp"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmUsers"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="Forms\uPassword_Edit.pp"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmPassword_Edit"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="Forms\uUsers_Edit.pp"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmUsers_Edit"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="Forms\uReference.pp"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmReference"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="Forms\uReference_Edit.pp"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmReference_Edit"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="Forms\uHouse.pp"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmHouse"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="Forms\uHouse_Edit.pp"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmHouse_Edit"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="Forms\uInhabitant_Edit.pp"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmInhabitant_Edit"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="Forms\uLands_Edit.pp"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmLands_Edit"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit14>
+      <Unit15>
+        <Filename Value="Forms\uBackup.pp"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmBackup"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit15>
+      <Unit16>
+        <Filename Value="Forms\uGeneral_Data.pp"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmGeneral_Data"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit16>
+      <Unit17>
+        <Filename Value="Forms\uGeneral_Data_Edit.pp"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmGeneral_Data_Edit"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit17>
+      <Unit18>
+        <Filename Value="Forms\uAddress_Edit.pp"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmAddress_Edit"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit18>
+      <Unit19>
+        <Filename Value="Forms\uAbout.pp"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmAbout"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit19>
+    </Units>
+  </ProjectOptions>
+  <CompilerOptions>
+    <Version Value="11"/>
+    <PathDelim Value="\"/>
+    <Target>
+      <Filename Value="Bin\SocFix"/>
+    </Target>
+    <SearchPaths>
+      <IncludeFiles Value="$(ProjOutDir)"/>
+      <Libraries Value="Bin\Lib64"/>
+      <OtherUnitFiles Value="Forms;Units"/>
+      <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+    </SearchPaths>
+    <Linking>
+      <Debugging>
+        <DebugInfoType Value="dsDwarf2Set"/>
+      </Debugging>
+      <Options>
+        <Win32>
+          <GraphicApplication Value="True"/>
+        </Win32>
+      </Options>
+    </Linking>
+    <Other>
+      <Verbosity>
+        <ShoLineNum Value="True"/>
+      </Verbosity>
+    </Other>
+  </CompilerOptions>
+</CONFIG>
