@@ -1,0 +1,217 @@
+object frmUsers_Edit: TfrmUsers_Edit
+  Left = 340
+  Height = 195
+  Top = 308
+  Width = 310
+  BorderStyle = bsDialog
+  BorderWidth = 5
+  Caption = 'Новий користувач'
+  ClientHeight = 195
+  ClientWidth = 310
+  OnClose = FormClose
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  LCLVersion = '2.0.0.4'
+  object pnlButtons: TPanel
+    Left = 5
+    Height = 35
+    Top = 155
+    Width = 300
+    Align = alBottom
+    BevelOuter = bvNone
+    ClientHeight = 35
+    ClientWidth = 300
+    TabOrder = 3
+    object btnSave: TBitBtn
+      Left = 0
+      Height = 30
+      Top = 5
+      Width = 150
+      Caption = 'Зберегти'
+      Margin = 1
+      Images = dm.ilButtons
+      ImageIndex = 3
+      ImageWidth = 24
+      OnClick = btnSaveClick
+      Spacing = -1
+      TabOrder = 0
+    end
+    object btnClose: TBitBtn
+      Left = 150
+      Height = 30
+      Top = 5
+      Width = 150
+      Anchors = [akTop, akRight]
+      Cancel = True
+      Caption = 'Скасувати'
+      Margin = 1
+      Images = dm.ilButtons
+      ImageIndex = 6
+      ImageWidth = 24
+      OnClick = btnCloseClick
+      Spacing = -1
+      TabOrder = 1
+    end
+  end
+  object grpUserPassword: TGroupBox
+    Left = 5
+    Height = 50
+    Top = 55
+    Width = 300
+    Align = alTop
+    Caption = ' Пароль '
+    ClientHeight = 30
+    ClientWidth = 296
+    TabOrder = 1
+    object edtUserPassword: TEdit
+      Left = 5
+      Height = 23
+      Top = 0
+      Width = 285
+      Anchors = [akTop, akLeft, akRight]
+      EchoMode = emPassword
+      OnChange = OnChangeData
+      OnUTF8KeyPress = edtUserPasswordUTF8KeyPress
+      PasswordChar = '*'
+      TabOrder = 0
+    end
+  end
+  object grpUserName: TGroupBox
+    Left = 5
+    Height = 50
+    Top = 5
+    Width = 300
+    Align = alTop
+    Caption = ' Користувач '
+    ClientHeight = 30
+    ClientWidth = 296
+    TabOrder = 0
+    object edtUserName: TEdit
+      Left = 5
+      Height = 23
+      Top = 0
+      Width = 285
+      Anchors = [akTop, akLeft, akRight]
+      OnChange = OnChangeData
+      OnUTF8KeyPress = OnUTF8KeyPress
+      TabOrder = 0
+    end
+  end
+  object rgAccess: TRadioGroup
+    Left = 5
+    Height = 50
+    Top = 105
+    Width = 300
+    Align = alTop
+    AutoFill = True
+    Caption = ' Доступ до програми '
+    ChildSizing.LeftRightSpacing = 6
+    ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+    ChildSizing.EnlargeVertical = crsHomogenousChildResize
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 2
+    ClientHeight = 30
+    ClientWidth = 296
+    Columns = 2
+    ItemIndex = 1
+    Items.Strings = (
+      'Заборонено'
+      'Дозволено'
+    )
+    OnClick = OnChangeData
+    OnUTF8KeyPress = OnUTF8KeyPress
+    TabOrder = 2
+    TabStop = True
+  end
+  object sqlUser: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'id'
+        DataType = ftAutoInc
+        Precision = -1
+      end    
+      item
+        Name = 'pib'
+        DataType = ftString
+        Precision = -1
+        Size = 600
+      end    
+      item
+        Name = 'parol'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'dostup'
+        DataType = ftSmallint
+        Precision = -1
+      end>
+    Database = dm.MySQLDB56
+    Transaction = dm.SaveTransaction
+    SQL.Strings = (
+      ''
+    )
+    InsertSQL.Strings = (
+      'insert into KORYSTUVACHI'
+      '( PIB,  PAROL,  DOSTUP) values'
+      '(:PIB, :PAROL, :DOSTUP)'
+    )
+    UpdateSQL.Strings = (
+      'update KORYSTUVACHI'
+      'set'
+      #9'  PIB    = :PIB,'
+      '    PAROL  = :PAROL,'
+      #9'  DOSTUP = :DOSTUP'
+      'where'
+      '    ID     = :ID'
+    )
+    Params = <>
+    left = 40
+    top = 20
+  end
+  object qGetData: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'id'
+        DataType = ftAutoInc
+        Precision = -1
+      end    
+      item
+        Name = 'pib'
+        DataType = ftString
+        Precision = -1
+        Size = 600
+      end    
+      item
+        Name = 'parol'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'dostup'
+        DataType = ftSmallint
+        Precision = -1
+      end>
+    Database = dm.MySQLDB56
+    Transaction = dm.MainTransaction
+    SQL.Strings = (
+      'select'
+      '    *'
+      'from KORYSTUVACHI'
+      'where'
+      '    ID = :ID'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'ID'
+        ParamType = ptInput
+      end>
+    left = 10
+    top = 20
+  end
+end

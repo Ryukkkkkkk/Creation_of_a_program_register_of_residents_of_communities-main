@@ -1,0 +1,226 @@
+object frmAbout: TfrmAbout
+  Left = 627
+  Height = 387
+  Top = 204
+  Width = 516
+  BorderStyle = bsDialog
+  BorderWidth = 5
+  Caption = 'Про програму'
+  ClientHeight = 387
+  ClientWidth = 516
+  OnClose = FormClose
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  LCLVersion = '2.0.0.4'
+  object pnlButtons: TPanel
+    Left = 5
+    Height = 35
+    Top = 347
+    Width = 506
+    Align = alBottom
+    BevelOuter = bvNone
+    ClientHeight = 35
+    ClientWidth = 506
+    TabOrder = 0
+    object btnClose: TBitBtn
+      Left = 356
+      Height = 30
+      Top = 5
+      Width = 150
+      Anchors = [akTop, akRight]
+      Cancel = True
+      Caption = 'Вихід'
+      Glyph.Data = {
+        DA060000424DDC060000000000001A0000000C00000018001800010018003D1D
+        E32F0DE1310FE1310FE1310FE1310FE1310FE1310FE1310FE1310FE1310FE131
+        0FE1310FE1310FE1310FE1310FE1310FE1310FE1310FE1310FE1310FE1310FE1
+        2F0DE13D1DE32400DF2400DF2400DF2400DF2400DF2400DF2400DF2400DF2400
+        DF593EE77C67ECA698F2AA9DF38470ED5D43E72906E02400DF2400DF2400DF24
+        00DF2400DF2400DF2400DF2400DF3210E12400DF2400DF2400DF2400DF2400DF
+        2400DF7660EBCDC4F8FFFFFFFFFFFFFEFEFFFFFFFFFFFFFFFFFFFFE6E1FC8E7B
+        EF2400DF2400DF2400DF2400DF2400DF2400DF310FE13210E12400DF2400DF24
+        00DF2400DF3817E2C9C1F8FFFFFFFFFFFF8075EB553BE65E42E7583DE7674EE9
+        9584EFFCFBFEFFFFFFE7E4FC573CE72400DF2400DF2400DF2400DF310FE13210
+        E12400DF2400DF2400DF482AE4FDFDFFFFFFFF7968EB2307DE2400DF2400DF24
+        00DF2400DF2400DF2400DF2B08E07862EBFFFFFFFFFFFF6C54E92400DF2400DF
+        2400DF310FE13210E12400DF2400DF2C0AE0FEFEFFFEFDFF654BE82400DF2400
+        DF2400DF2400DF2400DF2400DF2400DF2400DF2400DF2400DF3E1EE3F9F7FEFF
+        FFFF492BE42400DF2400DF310FE13210E12400DF2400DFBCB1F6FFFFFF664BE9
+        2400DF2400DF2400DF2400DF2400DF2400DF2400DF2400DF2400DF2400DF2400
+        DF2400DF3514E2FFFFFFF4F3FD2501DF2400DF310FE13210E12400DF5034E6FF
+        FFFF8173EC2400DF2400DF2400DF2400DF2400DF2400DFC6BDF7D6CFF93A1AE2
+        2400DF2400DF2400DF2400DF2400DF7059EAFFFFFF8774EE2400DF310FE13210
+        E12400DFC6BDF7FFFFFF2704DF2400DF2400DF2400DF2400DF2400DF2400DFFF
+        FFFFFCFCFF492CE42400DF2400DF2400DF2400DF2400DF2400DFF5F4FEF3F1FE
+        2906E0310FE13210E12F0CE1FEFEFFDCD6F92400DF2400DF2400DF2400DF2400
+        DF2400DF2400DFECE9FCFCFCFF4425E42400DF2400DF2400DF2400DF2400DF24
+        00DF8672EDFFFFFF6046E8310FE13210E16147E8FFFFFF7E69EC2400DF2400DF
+        2400DF2400DF2400DF2400DF2400DFECE9FCFCFCFF4425E42400DF2400DF2400
+        DF2400DF2400DF2400DF5539E6FFFFFF8A76EE310FE13210E1A292F2FFFFFF6B
+        52E92400DF2400DF2400DF2400DF2400DF2400DF2400DFECE9FCFCFCFF4425E4
+        2400DF2400DF2400DF2400DF2400DF2400DF5337E6FFFFFFADA0F3310FE13210
+        E19A89F0FFFFFF6D55EA2400DF2400DF2400DF2400DF2400DF2400DF2400DFEC
+        E9FCFCFCFF4425E42400DF2400DF2400DF2400DF2400DF2400DF5337E6FFFFFF
+        A89AF2310FE13210E15539E6FFFFFF8B77EE2400DF2400DF2400DF2400DF2400
+        DF2400DF2400DFECE9FCFCFCFF4425E42400DF2400DF2400DF2400DF2400DF24
+        00DF563AE6FFFFFF8470ED310FE13210E12A07E0FCFCFFE3DDFB2400DF2400DF
+        2400DF2400DF2400DF2400DF2400DFECE9FCFCFCFF4425E42400DF2400DF2400
+        DF2400DF2400DF2400DF8E7BEEFFFFFF573BE6310FE13210E12400DFB6AAF5FF
+        FFFF3413E12400DF2400DF2400DF2400DF2400DF2400DFFFFFFFFEFFFF4B2EE5
+        2400DF2400DF2400DF2400DF2400DF2602DFFFFFFFE5E0FB2602DF310FE13210
+        E12400DF4223E4FFFFFFC7BDF72400DF2400DF2400DF2400DF2400DF2400DF9E
+        8EF1AEA0F33514E22400DF2400DF2400DF2400DF2400DF8E7BEFFFFFFF7861EB
+        2400DF310FE13210E12400DF2400DFA798F2FFFFFF7F6AEC2400DF2400DF2400
+        DF2400DF2400DF2400DF2400DF2400DF2400DF2400DF2400DF2400DF4E31E5FF
+        FFFFE1DBFB2400DF2400DF310FE13210E12400DF2400DF2400DFE4DFFBFFFFFF
+        7E69EC2400DF2400DF2400DF2400DF2400DF2400DF2400DF2400DF2400DF2400
+        DF593EE7FFFFFFFFFFFF3716E22400DF2400DF310FE13210E12400DF2400DF24
+        00DF310FE1EAE7FCFFFFFFC0B6F64425E42400DF2400DF2400DF2400DF2400DF
+        2400DF3210E19D8EF1FFFFFFFFFFFF4B2DE52400DF2400DF2400DF310FE13210
+        E12400DF2400DF2400DF2400DF2906E0A798F2FFFFFFFFFFFFE2DCFA927FEF6C
+        54EA674EE98571EDD1C9F8FFFFFFFFFFFFC2B8F63F20E32400DF2400DF2400DF
+        2400DF310FE13210E12400DF2400DF2400DF2400DF2400DF2400DF5135E6B1A5
+        F4F7F5FEFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFC0B5F66A51E92400DF2400DF24
+        00DF2400DF2400DF2400DF310FE12400DF2400DF2400DF2400DF2400DF2400DF
+        2400DF2400DF2400DF310FE15C42E78976ED9482EF6950E93C1CE32400DF2400
+        DF2400DF2400DF2400DF2400DF2400DF2400DF2400DF3E1EE32F0DE13210E132
+        10E13210E13210E13210E13210E13210E13210E13210E13210E13210E13210E1
+        3210E13210E13210E13210E13210E13210E13210E13210E12F0DE13E1EE3
+      }
+      Margin = 1
+      Images = dm.ilButtons
+      ImageIndex = 7
+      ImageWidth = 24
+      OnClick = btnCloseClick
+      Spacing = -1
+      TabOrder = 0
+    end
+  end
+  object lblName: TLabel
+    Left = 10
+    Height = 32
+    Top = 10
+    Width = 496
+    Align = alTop
+    Alignment = taCenter
+    BorderSpacing.Around = 5
+    Caption = 'SocFix'
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Color = clBlack
+    Font.Height = -27
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object lblVersion: TLabel
+    Left = 10
+    Height = 16
+    Top = 47
+    Width = 496
+    Align = alTop
+    Alignment = taCenter
+    BorderSpacing.Around = 5
+    Caption = 'v 0.0.0.1'
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object lblCaption: TLabel
+    Left = 10
+    Height = 45
+    Top = 68
+    Width = 496
+    Align = alTop
+    Alignment = taCenter
+    BorderSpacing.Around = 5
+    Caption = 'Socfix – це програма створена для погосподарського обліку, обліку громадян, землі, а також інших відомостей регіону основним завдання якої є автоматизація роботи місцевих адміністративних одиниць.  '
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Color = clBlack
+    Font.Height = -12
+    Font.Name = 'Segoe UI'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+    WordWrap = True
+  end
+  object lblAuthors: TLabel
+    Left = 10
+    Height = 13
+    Top = 293
+    Width = 496
+    Align = alBottom
+    BorderSpacing.Around = 5
+    Caption = 'Розробники:'
+    ParentColor = False
+  end
+  object lblAuthor_1: TLabel
+    Left = 10
+    Height = 13
+    Top = 311
+    Width = 496
+    Align = alBottom
+    BorderSpacing.Around = 5
+    Caption = ' - Сергій Зубриюк'
+    ParentColor = False
+  end
+  object lblAuthor_2: TLabel
+    Left = 10
+    Height = 13
+    Top = 329
+    Width = 496
+    Align = alBottom
+    BorderSpacing.Around = 5
+    Caption = ' - Андрій Карамач'
+    ParentColor = False
+  end
+  object lblContact: TLabel
+    Left = 10
+    Height = 16
+    Top = 272
+    Width = 496
+    Align = alBottom
+    Alignment = taCenter
+    BorderSpacing.Around = 5
+    Caption = 'socfix.feedback@gmail.com'
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Color = clBlue
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    OnClick = lblContactClick
+    OnMouseLeave = lblContactMouseLeave
+    OnMouseMove = lblContactMouseMove
+  end
+  object lblCaption1: TLabel
+    Left = 10
+    Height = 150
+    Top = 118
+    Width = 496
+    Align = alTop
+    BorderSpacing.Around = 5
+    Caption = #13#10'При викристанні даного продукту в користувача є можливість формувати такі форми звітності:'#13#10#13#10'•  Довідки про склад сімї;'#13#10'•  Акти обстеження сціально-побутових умов проживання ;'#13#10'•  Довідки про реєстрацію місця проживання Форма13;'#13#10'•  Довідки про членство в ОСГ;'#13#10'•  Імпортувати таблиці населення в *.xls файл'#13#10'•  Та інше.'
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Color = clBlack
+    Font.Height = -12
+    Font.Name = 'Segoe UI'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+    WordWrap = True
+  end
+end

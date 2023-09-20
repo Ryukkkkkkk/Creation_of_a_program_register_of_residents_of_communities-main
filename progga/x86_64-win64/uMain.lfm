@@ -1,0 +1,1860 @@
+object frmMain: TfrmMain
+  Left = 300
+  Height = 550
+  Top = 125
+  Width = 1000
+  BorderWidth = 5
+  Caption = 'SocFix'
+  ClientHeight = 530
+  ClientWidth = 1000
+  Menu = MainMenu
+  OnClose = FormClose
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  LCLVersion = '2.0.2.0'
+  object pcInfo: TPageControl
+    Left = 5
+    Height = 275
+    Top = 55
+    Width = 990
+    ActivePage = tsPopulation
+    Align = alClient
+    TabHeight = 20
+    TabIndex = 0
+    TabOrder = 0
+    TabWidth = 200
+    OnChange = OnFilterChange
+    object tsPopulation: TTabSheet
+      Caption = 'Населення'
+      ChildSizing.LeftRightSpacing = 1
+      ChildSizing.TopBottomSpacing = 1
+      ClientHeight = 247
+      ClientWidth = 982
+      object dbgPopulation: TDBGrid
+        Left = 1
+        Height = 245
+        Top = 1
+        Width = 980
+        Align = alClient
+        AutoEdit = False
+        AutoFillColumns = True
+        Color = clWindow
+        Columns = <        
+          item
+            Alignment = taCenter
+            MinSize = 15
+            MaxSize = 50
+            SizePriority = 0
+            Tag = -1
+            Title.Alignment = taCenter
+            Title.Caption = 'ID'
+            Width = 35
+            FieldName = 'ID'
+          end        
+          item
+            SizePriority = 0
+            Title.Alignment = taCenter
+            Title.Caption = 'Прізвище Ім''я По батькові'
+            Width = 200
+            FieldName = 'FULLNAME'
+          end        
+          item
+            Alignment = taCenter
+            SizePriority = 0
+            Title.Alignment = taCenter
+            Title.Caption = 'Дата н-ня'
+            Width = 75
+            FieldName = 'DATA_NARODZHENNIA'
+          end        
+          item
+            Alignment = taCenter
+            SizePriority = 0
+            Title.Alignment = taCenter
+            Title.Caption = 'Паспортні дані'
+            Width = 0
+            Visible = False
+            FieldName = 'PASSPORT'
+          end        
+          item
+            Alignment = taCenter
+            SizePriority = 0
+            Title.Alignment = taCenter
+            Title.Caption = 'Вік'
+            Width = 35
+            FieldName = 'AGE'
+          end        
+          item
+            SizePriority = 0
+            Title.Alignment = taCenter
+            Title.Caption = 'Село'
+            Width = 75
+            FieldName = 'VILLAGE'
+          end        
+          item
+            Title.Alignment = taCenter
+            Title.Caption = 'Адреса реєстрації'
+            Width = 377
+            FieldName = 'ADRESA_HOSPODARSTVA'
+          end        
+          item
+            Alignment = taCenter
+            SizePriority = 0
+            Title.Alignment = taCenter
+            Title.Caption = 'Телефон'
+            Width = 75
+            FieldName = 'NOMER_TELEFONU'
+          end        
+          item
+            SizePriority = 0
+            Title.Alignment = taCenter
+            Title.Caption = 'Примітки'
+            Width = 75
+            FieldName = 'PRYMITKY'
+          end>
+        DataSource = dsPopulation
+        Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgDisableDelete, dgDisableInsert, dgCellHints, dgTruncCellHints, dgCellEllipsis, dgRowHighlight]
+        PopupMenu = pUpmPopulation
+        Scrollbars = ssVertical
+        ShowHint = True
+        TabOrder = 0
+        TitleFont.Style = [fsBold]
+        OnDblClick = dbgDblClick
+        OnTitleClick = dbgTitleClick
+        OnUTF8KeyPress = dbgUTF8KeyPress
+      end
+    end
+    object tsHouse: TTabSheet
+      Caption = 'Господарства'
+      ChildSizing.LeftRightSpacing = 1
+      ChildSizing.TopBottomSpacing = 1
+      ClientHeight = 247
+      ClientWidth = 982
+      object dbgHouse: TDBGrid
+        Left = 1
+        Height = 245
+        Top = 1
+        Width = 980
+        Align = alClient
+        AutoEdit = False
+        AutoFillColumns = True
+        Color = clWindow
+        Columns = <        
+          item
+            Alignment = taCenter
+            MaxSize = 50
+            SizePriority = 0
+            Title.Alignment = taCenter
+            Title.Caption = 'ID'
+            Width = 50
+            FieldName = 'ID'
+          end        
+          item
+            Alignment = taCenter
+            SizePriority = 0
+            Title.Alignment = taCenter
+            Title.Caption = 'Номер'
+            Width = 50
+            FieldName = 'NOMER'
+          end        
+          item
+            SizePriority = 0
+            Title.Alignment = taCenter
+            Title.Caption = 'Село'
+            Width = 150
+            FieldName = 'NAZVA'
+          end        
+          item
+            Title.Alignment = taCenter
+            Title.Caption = 'Адреса'
+            Width = 697
+            FieldName = 'ADRESA'
+          end>
+        DataSource = dsHouse
+        Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgDisableDelete, dgDisableInsert, dgCellHints, dgTruncCellHints, dgCellEllipsis, dgRowHighlight]
+        PopupMenu = pUpmHouse
+        Scrollbars = ssVertical
+        ShowHint = True
+        TabOrder = 0
+        TitleFont.Style = [fsBold]
+        OnDblClick = dbgDblClick
+        OnTitleClick = dbgTitleClick
+        OnUTF8KeyPress = dbgUTF8KeyPress
+      end
+    end
+    object tsLandOwners: TTabSheet
+      BorderWidth = 5
+      Caption = 'Землевласники'
+      ChildSizing.LeftRightSpacing = 1
+      ChildSizing.TopBottomSpacing = 1
+      ClientHeight = 247
+      ClientWidth = 982
+      object dbgLandOwners: TDBGrid
+        Left = 1
+        Height = 245
+        Top = 1
+        Width = 980
+        Align = alClient
+        AutoEdit = False
+        AutoFillColumns = True
+        Color = clWindow
+        Columns = <        
+          item
+            Alignment = taCenter
+            MinSize = 15
+            MaxSize = 50
+            SizePriority = 0
+            Tag = -1
+            Title.Alignment = taCenter
+            Title.Caption = 'ID'
+            Width = 35
+            FieldName = 'ID'
+          end        
+          item
+            SizePriority = 0
+            Title.Alignment = taCenter
+            Title.Caption = 'Прізвище Ім''я По батькові'
+            Width = 250
+            FieldName = 'FULLNAME'
+          end        
+          item
+            Alignment = taCenter
+            SizePriority = 0
+            Title.Alignment = taCenter
+            Title.Caption = 'К-ть ділянок'
+            Width = 100
+            FieldName = 'LANDS_COUNT'
+          end        
+          item
+            Alignment = taCenter
+            SizePriority = 0
+            Title.Alignment = taCenter
+            Title.Caption = 'Площа ділянок'
+            Width = 100
+            FieldName = 'LANDS_AREA'
+          end        
+          item
+            SizePriority = 1
+            Title.Alignment = taCenter
+            Title.Caption = 'Адреса реєстрації'
+            Width = 312
+            FieldName = 'ADRESA_HOSPODARSTVA'
+          end        
+          item
+            Alignment = taCenter
+            SizePriority = 0
+            Title.Alignment = taCenter
+            Title.Caption = 'Телефон'
+            Width = 75
+            FieldName = 'NOMER_TELEFONU'
+          end        
+          item
+            SizePriority = 0
+            Tag = -1
+            Title.Alignment = taCenter
+            Title.Caption = 'Примітки'
+            Width = 75
+            FieldName = 'PRYMITKY'
+          end>
+        DataSource = dsLandOwners
+        Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgDisableDelete, dgDisableInsert, dgCellHints, dgTruncCellHints, dgCellEllipsis, dgRowHighlight]
+        PopupMenu = pLandOwners
+        Scrollbars = ssVertical
+        ShowHint = True
+        TabOrder = 0
+        TitleFont.Style = [fsBold]
+        OnDblClick = dbgDblClick
+        OnTitleClick = dbgTitleClick
+        OnUTF8KeyPress = dbgUTF8KeyPress
+      end
+    end
+  end
+  object pnlButtons: TPanel
+    Left = 5
+    Height = 35
+    Top = 490
+    Width = 990
+    Align = alBottom
+    BevelOuter = bvNone
+    ClientHeight = 35
+    ClientWidth = 990
+    TabOrder = 1
+    object btnAdd: TBitBtn
+      Left = 0
+      Height = 30
+      Top = 5
+      Width = 150
+      Action = actAdd
+      Margin = 1
+      Images = dm.ilButtons
+      ImageIndex = 0
+      ImageWidth = 24
+      OnClick = actAddUpdExecute
+      Spacing = -1
+      TabOrder = 0
+    end
+    object btnUpd: TBitBtn
+      Left = 150
+      Height = 30
+      Top = 5
+      Width = 150
+      Action = actUpd
+      Margin = 1
+      Images = dm.ilButtons
+      ImageIndex = 1
+      ImageWidth = 24
+      OnClick = actAddUpdExecute
+      Spacing = -1
+      TabOrder = 1
+    end
+    object btnClose: TBitBtn
+      Left = 840
+      Height = 30
+      Top = 5
+      Width = 150
+      Anchors = [akTop, akRight]
+      Caption = 'Вихід'
+      Margin = 1
+      Images = dm.ilButtons
+      ImageIndex = 7
+      ImageWidth = 24
+      OnClick = btnCloseClick
+      Spacing = -1
+      TabOrder = 2
+    end
+    object btnPrint: TBitBtn
+      Left = 690
+      Height = 30
+      Top = 5
+      Width = 150
+      Action = actPrint
+      Anchors = [akTop, akRight]
+      Margin = 1
+      Images = dm.ilButtons
+      ImageIndex = 5
+      ImageWidth = 24
+      PopupMenu = pUpmPrint
+      Spacing = -1
+      TabOrder = 3
+    end
+  end
+  object pnlFilters: TPanel
+    Left = 5
+    Height = 50
+    Top = 5
+    Width = 990
+    Align = alTop
+    BevelOuter = bvNone
+    ClientHeight = 50
+    ClientWidth = 990
+    TabOrder = 2
+    object grpSearch: TGroupBox
+      Left = 736
+      Height = 50
+      Top = 0
+      Width = 254
+      Anchors = [akTop, akRight]
+      Caption = ' Пошук '
+      ClientHeight = 30
+      ClientWidth = 250
+      TabOrder = 0
+      object edtSearch: TEditButton
+        Left = 9
+        Height = 23
+        Top = 0
+        Width = 234
+        ButtonHint = 'Очистити поле пошуку'
+        ButtonWidth = 25
+        Glyph.Data = {
+          0A040000424D0C040000000000001A0000000C0000001200120001001800FFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF0000FFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFF0000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFD3D3D39F9F9FA8A8A8A9A9A9A9A9A9A9A9A9A9A9A9A5A5A5ABAAAAF0F0
+          F0FFFFFF0000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFACACAC3030303C3F
+          3E484B4A575A595C5F5D4548463739393E403F3E3F3FA2A2A2FFFFFF0000FFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFF9A9A9A1314144547467E8180595D5B72777666
+          6C698084827A7D7C414543383A39979797FFFFFF0000FFFFFFFFFFFFFFFFFFFF
+          FFFF8686860C0C0C2B2C2CBDBDBDFDFCFC808080171A19454746DCDCDCF4F4F4
+          686A691314149D9D9DFFFFFF0000FFFFFFFFFFFFFFFFFF707070010101000000
+          232323F2F2F2FFFFFFF1F2F17F8080BCBCBCFFFFFFFFFFFF8787870000009E9E
+          9EFFFFFF0000FFFFFFEDEDED606060181818141414151515090909494949E9EA
+          E9FFFFFFFFFFFFFEFEFEFBFBFB888888000000000000A0A0A0FFFFFF0000FFFF
+          FFBBBBBB2222225454544343434040403B3B3B050505737373FFFFFFFFFFFFFF
+          FFFFCDCDCD070707161616171717A0A0A0FFFFFF0000FFFFFFFBFBFB8B8B8B33
+          34345B5B5B4E4E4E323232474747CBCBCBFFFFFFFFFFFFFFFFFFF1F1F17D7D7D
+          232323393939A3A3A3FFFFFF6700FFFFFFFFFFFFFFFFFFA0A0A03A3A3A5B5B5B
+          626262E8E8E8FFFFFFFFFFFFBEBEBEEAEAEAFFFFFFFFFFFF8D8D8D222322A3A3
+          A3FFFFFF3E00FFFFFFFFFFFFFFFFFFFFFFFFB8B8B836363680807FF8F7F7FFFF
+          FFB4B4B43232326A6A6AFFFFFFFFFFFF9D9D9D2E2E2EA6A6A6FFFFFF4E00FFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFCECECE404241898989BEBDBD6F6F6F6B6A6B59
+          59599D9D9DAAAAAA5B5B5B5757579FA0A0FFFFFF7300FFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFDDDEDE7878786667675959596162626060604C4D4D474848
+          555655737474C5C6C6FFFFFF4C00FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFF9F9F9D7D8D8D5D6D5D8D8D8D8D8D8D8D8D8D8D8D8D4D4D4E0E0E0FDFD
+          FDFFFFFF7400FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF7700FFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF4500FFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFF2000
+        }
+        MaxLength = 0
+        NumGlyphs = 1
+        OnButtonClick = edtSearchButtonClick
+        OnChange = OnFilterChange
+        OnUTF8KeyPress = OnFilterUTF8KeyPress
+        PasswordChar = #0
+        Spacing = 0
+        TabOrder = 0
+      end
+    end
+    object grpLocation: TGroupBox
+      Left = 0
+      Height = 50
+      Top = 0
+      Width = 170
+      Caption = ' Населений пункт '
+      ClientHeight = 30
+      ClientWidth = 166
+      TabOrder = 1
+      object lcbLocation: TDBLookupComboBox
+        Left = 10
+        Height = 23
+        Top = 0
+        Width = 150
+        AutoComplete = True
+        AutoDropDown = True
+        DropDownCount = 10
+        KeyField = 'ID'
+        ListField = 'NAZVA'
+        ListFieldIndex = 0
+        ListSource = dsLocation
+        LookupCache = True
+        OnCloseUp = OnFilterCloseUp
+        OnDropDown = OnFilterDropDown
+        OnSelect = OnFilterChange
+        OnUTF8KeyPress = OnFilterUTF8KeyPress
+        ScrollListDataset = True
+        Sorted = True
+        Style = csDropDownList
+        TabOrder = 0
+      end
+    end
+    object pnlFilters_Population: TPanel
+      Left = 175
+      Height = 50
+      Top = 0
+      Width = 350
+      BevelOuter = bvNone
+      ClientHeight = 50
+      ClientWidth = 350
+      TabOrder = 2
+      object chkMale: TCheckBox
+        Left = 10
+        Height = 19
+        Top = 5
+        Width = 71
+        Caption = 'Чоловіки'
+        Checked = True
+        OnChange = OnFilterChange
+        State = cbChecked
+        TabOrder = 0
+      end
+      object chkFemale: TCheckBox
+        Left = 10
+        Height = 19
+        Top = 25
+        Width = 54
+        Caption = 'Жінки'
+        Checked = True
+        OnChange = OnFilterChange
+        State = cbChecked
+        TabOrder = 1
+      end
+      object chkAlive: TCheckBox
+        Left = 120
+        Height = 19
+        Top = 5
+        Width = 47
+        Caption = 'Живі'
+        Checked = True
+        OnChange = OnFilterChange
+        State = cbChecked
+        TabOrder = 2
+      end
+      object chkLifeless: TCheckBox
+        Left = 120
+        Height = 19
+        Top = 25
+        Width = 60
+        Caption = 'Неживі'
+        OnChange = OnFilterChange
+        TabOrder = 3
+      end
+      object chkUnderaged: TCheckBox
+        Left = 220
+        Height = 19
+        Top = 5
+        Width = 94
+        Caption = 'Неповнолітні'
+        OnChange = OnFilterChange
+        TabOrder = 4
+      end
+      object chkHomeless: TCheckBox
+        Left = 220
+        Height = 19
+        Top = 25
+        Width = 115
+        Caption = 'Без господарства'
+        OnChange = OnFilterChange
+        TabOrder = 5
+      end
+    end
+    object pnlFilters_House: TPanel
+      Left = 525
+      Height = 50
+      Top = 0
+      Width = 200
+      BevelOuter = bvNone
+      ClientHeight = 50
+      ClientWidth = 200
+      TabOrder = 3
+      object chkWithout_Inhabitant: TCheckBox
+        Left = 10
+        Height = 19
+        Top = 5
+        Width = 163
+        Caption = 'Господарство без жителів'
+        OnChange = OnFilterChange
+        TabOrder = 0
+      end
+    end
+  end
+  object Splitter: TSplitter
+    Cursor = crVSplit
+    Left = 5
+    Height = 5
+    Top = 330
+    Width = 990
+    Align = alBottom
+    ResizeAnchor = akBottom
+  end
+  object pcDetails: TPageControl
+    Left = 5
+    Height = 155
+    Top = 335
+    Width = 990
+    ActivePage = tsFamily
+    Align = alBottom
+    Constraints.MaxHeight = 355
+    Constraints.MinHeight = 155
+    TabHeight = 20
+    TabIndex = 0
+    TabOrder = 4
+    TabWidth = 200
+    OnChange = pcDetailsChange
+    object tsFamily: TTabSheet
+      Caption = 'Зареєстровані в господарстві'
+      ClientHeight = 127
+      ClientWidth = 982
+      object dbgFamily: TDBGrid
+        Left = 5
+        Height = 117
+        Top = 5
+        Width = 937
+        Align = alClient
+        AutoEdit = False
+        AutoFillColumns = True
+        BorderSpacing.Left = 5
+        BorderSpacing.Top = 5
+        BorderSpacing.Bottom = 5
+        Color = clWindow
+        Columns = <        
+          item
+            MinSize = 200
+            MaxSize = 250
+            SizePriority = 1
+            Title.Alignment = taCenter
+            Title.Caption = 'Прізвище, ім''я, по батькові'
+            Width = 514
+            FieldName = 'FULLNAME'
+          end        
+          item
+            SizePriority = 0
+            Title.Alignment = taCenter
+            Title.Caption = 'Спорідненість'
+            Width = 125
+            FieldName = 'RELATIONSHIP'
+          end        
+          item
+            Alignment = taCenter
+            SizePriority = 0
+            Title.Alignment = taCenter
+            Title.Caption = 'Статус проживання'
+            Width = 125
+            FieldName = 'STATUS_PROZHYVANNIA_INFO'
+          end        
+          item
+            Alignment = taCenter
+            ButtonStyle = cbsCheckboxColumn
+            SizePriority = 0
+            Title.Alignment = taCenter
+            Title.Caption = '<T>'
+            Width = 0
+            Visible = False
+            FieldName = 'TYMCHASOVO_VYBUV'
+          end        
+          item
+            Alignment = taCenter
+            ButtonStyle = cbsCheckboxColumn
+            SizePriority = 0
+            Title.Alignment = taCenter
+            Title.Caption = '<O>'
+            Width = 0
+            Visible = False
+            FieldName = 'OSTATOCHNO_VYBUV'
+          end        
+          item
+            Alignment = taCenter
+            SizePriority = 0
+            Title.Alignment = taCenter
+            Title.Caption = 'Паспортні дані'
+            Width = 0
+            Visible = False
+            FieldName = 'PASSPORT'
+          end        
+          item
+            Alignment = taCenter
+            SizePriority = 0
+            Title.Alignment = taCenter
+            Title.Caption = 'Дата н-ня'
+            Width = 100
+            FieldName = 'DATA_NARODZHENNIA'
+          end        
+          item
+            Alignment = taCenter
+            SizePriority = 0
+            Title.Alignment = taCenter
+            Title.Caption = 'Дата смерті'
+            Width = 0
+            Visible = False
+            FieldName = 'DATA_SMERTI'
+          end        
+          item
+            Alignment = taCenter
+            SizePriority = 0
+            Title.Alignment = taCenter
+            Title.Caption = 'Вік'
+            Width = 40
+            FieldName = 'AGE'
+          end>
+        DataSource = dsFamily
+        Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgDisableDelete, dgDisableInsert, dgCellHints, dgTruncCellHints, dgCellEllipsis, dgRowHighlight]
+        PopupMenu = pUpmFamily
+        Scrollbars = ssVertical
+        ShowHint = True
+        TabOrder = 0
+        TitleFont.Style = [fsBold]
+        OnDblClick = dbgFamilyDblClick
+      end
+      object pnlFamily_Buttons: TPanel
+        Left = 942
+        Height = 127
+        Top = 0
+        Width = 40
+        Align = alRight
+        BevelOuter = bvNone
+        ClientHeight = 127
+        ClientWidth = 40
+        TabOrder = 1
+        object btnFamily_Add: TBitBtn
+          Left = 5
+          Height = 30
+          Top = 5
+          Width = 30
+          Action = actFamily_Add
+          Glyph.Data = {
+            DA060000424DDC060000000000001A0000000C000000180018000100180050A9
+            1A46A40D46A40D46A40D46A40D46A40D46A40D46A40D46A40D46A40D46A40D46
+            A40D46A40D46A40D46A40D46A40D46A40D46A40D46A40D46A40D46A40D46A40D
+            46A40D50A91A3C9F003C9F003C9F003C9F003C9F003C9F003C9F003FA0003A9E
+            00198E00178D00178D00178D00178D00198E003A9E003FA0003C9F003C9F003C
+            9F003C9F003C9F003C9F003C9F0046A40D3C9F003C9F003C9F003C9F003C9F00
+            3C9F00359C0041A20799CD799ECF809ECF809ECF809ECF8099CD7941A207359C
+            003C9F003C9F003C9F003C9F003C9F003C9F0046A40D46A40D3C9F003C9F003C
+            9F003C9F003C9F003C9F002A970048A50FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFF48A50F2A97003C9F003C9F003C9F003C9F003C9F003C9F0046A40D46A4
+            0D3C9F003C9F003C9F003C9F003C9F003C9F002D980046A40DF5FAF2FFFFFFFF
+            FFFFFFFFFFFFFFFFF5FAF246A40D2D98003C9F003C9F003C9F003C9F003C9F00
+            3C9F0046A40D46A40D3C9F003C9F003C9F003C9F003C9F003C9F002D980046A4
+            0DF5FAF2FFFFFFFFFFFFFFFFFFFFFFFFF5FAF246A40D2D98003C9F003C9F003C
+            9F003C9F003C9F003C9F0046A40D46A40D3C9F003C9F003C9F003C9F003C9F00
+            3C9F002D980046A40DF5FAF2FFFFFFFFFFFFFFFFFFFFFFFFF5FAF246A40D2D98
+            003C9F003C9F003C9F003C9F003C9F003C9F0046A40D46A40D3EA000389D002D
+            98002D98002D98002D98001D9000389D00F4FAF1FFFFFFFFFFFFFFFFFFFFFFFF
+            F4FAF1389D001D90002D98002D98002D98002D9800349B003FA00046A40D46A4
+            0D3A9E003FA00346A40D46A40D46A40D46A40D389D0D50A91AF6FAF3FFFFFFFF
+            FFFFFFFFFFFFFFFFF6FAF350A91A389D0D46A40D46A40D46A40D46A40D41A107
+            3A9E0046A40D46A40D2091006CB740F5FAF2F5FAF2F5FAF2F5FAF2F4FAF2F5FA
+            F2FEFFFEFFFFFFFFFFFFFFFFFFFFFFFFFEFFFEF5FAF2F4FAF2F5FAF2F5FAF2F5
+            FAF2F5FAF299CD79198E0046A40D46A40D1C8F0073BA48FFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFA6D38A148C0046A40D46A40D1E90006FB843FF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF9ECF80178D0046A40D46A4
+            0D1E90006FB843FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF9ECF80
+            178D0046A40D46A40D1C8F0073BA48FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFA6D38A148C0046A40D46A40D2091006CB740F5FAF2F5FAF2F5FAF2
+            F5FAF2F4FAF2F5FAF2FEFFFEFFFFFFFFFFFFFFFFFFFFFFFFFEFFFEF5FAF2F4FA
+            F2F5FAF2F5FAF2F5FAF2F5FAF299CD79198E0046A40D46A40D3A9E003FA00346
+            A40D46A40D46A40D46A40D389D0D50A91AF6FAF3FFFFFFFFFFFFFFFFFFFFFFFF
+            F6FAF350A91A389D0D46A40D46A40D46A40D46A40D41A1073A9E0046A40D46A4
+            0D3EA000389D002D98002D98002D98002D98001D9000389D00F4FAF1FFFFFFFF
+            FFFFFFFFFFFFFFFFF4FAF1389D001D90002D98002D98002D98002D9800349B00
+            3FA00046A40D46A40D3C9F003C9F003C9F003C9F003C9F003C9F002D980046A4
+            0DF5FAF2FFFFFFFFFFFFFFFFFFFFFFFFF5FAF246A40D2D98003C9F003C9F003C
+            9F003C9F003C9F003C9F0046A40D46A40D3C9F003C9F003C9F003C9F003C9F00
+            3C9F002D980046A40DF5FAF2FFFFFFFFFFFFFFFFFFFFFFFFF5FAF246A40D2D98
+            003C9F003C9F003C9F003C9F003C9F003C9F0046A40D46A40D3C9F003C9F003C
+            9F003C9F003C9F003C9F002D980046A40DF9FCF7FFFFFFFFFFFFFFFFFFFFFFFF
+            F9FCF746A40D2D98003C9F003C9F003C9F003C9F003C9F003C9F0046A40D46A4
+            0D3C9F003C9F003C9F003C9F003C9F003C9F002B970047A50EFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFF47A50E2B97003C9F003C9F003C9F003C9F003C9F00
+            3C9F0046A40D46A40D3C9F003C9F003C9F003C9F003C9F003C9F00389D003FA0
+            036DB7406FB8436FB8436FB8436FB8436DB7403FA003389D003C9F003C9F003C
+            9F003C9F003C9F003C9F0046A40D3C9F003C9F003C9F003C9F003C9F003C9F00
+            3C9F003EA0003A9E001F91001E90001E90001E90001E90001F91003A9E003EA0
+            003C9F003C9F003C9F003C9F003C9F003C9F003C9F0050A91A46A40D46A40D46
+            A40D46A40D46A40D46A40D46A40D46A40D46A40D46A40D46A40D46A40D46A40D
+            46A40D46A40D46A40D46A40D46A40D46A40D46A40D46A40D46A40D50A91A
+          }
+          Spacing = 0
+          TabOrder = 0
+        end
+        object btnFamily_Del: TBitBtn
+          Left = 5
+          Height = 30
+          Top = 65
+          Width = 30
+          Action = actFamily_Del
+          Glyph.Data = {
+            F6060000424DF806000000000000360000002800000018000000180000000100
+            180000000000C2060000120B0000120B000000000000000000003A1AE22F0DE1
+            2F0DE12F0DE12F0DE12F0DE12F0DE12E0DE12D0DE12E0DE12E0DE12E0DE12E0D
+            E12E0DE12E0DE12D0DE12E0DE12F0DE12F0DE12F0DE12F0DE12F0DE12F0DE13A
+            1AE22400DF2400DF2400DF2400DF2400DF2A00E01700DD0000DA0200DA0100DA
+            0100DA0100DA0100DA0100DA0100DA0200DA0000DA1500DD2900E02400DF2400
+            DF2400DF2400DF2400DF2F0DE12400DF2400DF2400DF2500DF1500DD2404DF92
+            80EFAA9CF3A495F2A293F2A697F2A698F2A293F2A394F2AA9CF39786F02B0BE0
+            1300DD2500DF2400DF2400DF2400DF2F0DE12F0DE12400DF2400DF2400DF2100
+            DF0500DBB0A3F3FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFC2B7F60C00DC1E00DE2400DF2400DF2400DF2F0DE12F0DE12400DF
+            2400DF2400DF1900DE1E00DEF3F1FDFFFFFF6950E9CDC4F8FFFFFF9381EF826E
+            EDFFFFFFDED8FA644FE8F9F9FEFEFEFF2400DF1700DD2400DF2400DF2400DF2F
+            0DE12F0DE12400DF2400DF2400DF1A00DE1D00DEEBE8FCFFFFFF0300DAA394F1
+            FFFFFF4425E3300EE1FFFFFFC9C0F70000D8EDEAFDFEFDFF2100DF1800DD2400
+            DF2400DF2400DF2F0DE12F0DE12400DF2400DF2400DF1A00DE1C00DEE8E4FCFF
+            FFFF2400DFAFA2F3FFFFFF5D42E74B2EE5FFFFFFD0C8F81900DDEFEDFDF9F8FE
+            2100DF1800DD2400DF2400DF2400DF2F0DE12F0DE12400DF2400DF2400DF1A00
+            DE1C00DEE8E4FCFFFFFF2400DFAFA2F3FFFFFF5D42E74B2EE5FFFFFFD0C8F819
+            00DDEFEDFDF9F8FE2100DF1800DD2400DF2400DF2400DF2F0DE12F0DE12400DF
+            2400DF2400DF1A00DE1C00DEE8E4FCFFFFFF2400DFAFA2F3FFFFFF5D42E74B2E
+            E5FFFFFFD0C8F81900DDEFEDFDF9F8FE2100DF1800DD2400DF2400DF2400DF2F
+            0DE12F0DE12400DF2400DF2400DF1A00DE1C00DEE8E4FCFFFFFF2400DFAFA2F3
+            FFFFFF5D42E74B2EE5FFFFFFD0C8F81900DDEFEDFDF9F8FE2100DF1800DD2400
+            DF2400DF2400DF2F0DE12F0DE12400DF2400DF2400DF1A00DE1C00DEE8E4FCFF
+            FFFF2400DFAFA2F3FFFFFF5D42E74B2EE5FFFFFFD0C8F81900DDEFEDFDF9F8FE
+            2100DF1800DD2400DF2400DF2400DF2F0DE12F0DE12400DF2400DF2400DF1A00
+            DE1C00DEE8E4FCFFFFFF2400DFAFA2F3FFFFFF5D42E74B2EE5FFFFFFD0C8F819
+            00DDEFEDFDF9F8FE2100DF1800DD2400DF2400DF2400DF2F0DE12F0DE12400DF
+            2400DF2400DF1A00DE1C00DEE8E4FCFFFFFF2400DFAFA2F3FFFFFF5D42E74B2E
+            E5FFFFFFD0C8F81900DDEFEDFDF9F8FE2100DF1800DD2400DF2400DF2400DF2F
+            0DE12F0DE12400DF2400DF2400DF1A00DE1C00DEE9E5FCFFFFFF1700DDAA9CF2
+            FFFFFF5336E64123E4FFFFFFCDC5F80B00DBEDEAFDFBFAFE2100DF1800DD2400
+            DF2400DF2400DF2F0DE12F0DE12400DF2400DF2400DF1A00DE1C00DEE7E4FCFF
+            FFFF2300DFB1A5F3FFFFFF5E44E7492CE5FFFFFFD0C8F81900DDF3F1FDF7F6FE
+            2100DF1800DD2400DF2400DF2400DF2F0DE12F0DE12400DF2400DF2400DF1900
+            DE1B00DEF2F0FDFFFFFFFDFCFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFC
+            FAFFFFFFFFFAF9FF2000DF1700DD2400DF2400DF2400DF2F0DE12F0DE12400DF
+            2400DF2600DF1E00DE0000D9907EEFB2A5F4C7BEF7B7ACF4B0A3F3C0B6F6C3BA
+            F6B0A3F3B5A9F4C8BFF7B2A5F49684F00100DA1C00DE2600DF2400DF2400DF2F
+            0DE12F0DE12400DF2400DF1E00DE2300DF9684F08E7CEE8D7BEE8C79EE8C79EE
+            8C79EE8C79EE8C79EE8C79EE8C79EE8C79EE8D7BEE8E7CEE9684EF2600DF1D00
+            DE2400DF2400DF2F0DE12F0DE12400DF2400DF1E00DE0600DBD5CDF9FFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            DED8FA0600DB1E00DE2400DF2400DF2F0DE12F0DE12400DF2400DF2500DF1500
+            DD1F01DE9D8CF1B9AEF5BCAEF5B8ABF59E8EF19A89F09A89F09D8CF0B6A9F4BC
+            AEF5BAAEF5A191F1280AE01300DD2500DF2400DF2400DF2F0DE12F0DE12400DF
+            2400DF2400DF2900E01700DD0100DA0800DB0000D82101DFAA9CF2B7ACF4B7AC
+            F4AEA0F32301DF0000D80800DB0200DA1500DD2900E02400DF2400DF2400DF2F
+            0DE12F0DE12400DF2400DF2400DF2400DF2400DF2300DF2100DF1800DD2308DF
+            8B78EEAA9CF3AA9CF3907EEF270ADF1700DD2100DF2200DF2400DF2400DF2400
+            DF2400DF2400DF2F0DE12400DF2400DF2400DF2400DF2400DF2400DF2400DF24
+            00DF2700DF2200DF0200DA0000D90000D90000DA2100DE2800DF2400DF2400DF
+            2400DF2400DF2400DF2400DF2400DF2400DF3A1AE22F0DE12F0DE12F0DE12F0D
+            E12F0DE12F0DE12F0DE12F0DE12F0DE12F0DE12F0DE12F0DE12F0DE12F0DE12F
+            0DE12F0DE12F0DE12F0DE12F0DE12F0DE12F0DE12F0DE13A1AE2
+          }
+          Spacing = 0
+          TabOrder = 1
+        end
+        object btnFamily_Upd: TBitBtn
+          Left = 5
+          Height = 30
+          Top = 35
+          Width = 30
+          Action = actFamily_Upd
+          Glyph.Data = {
+            DA060000424DDC060000000000001A0000000C00000018001800010018001A99
+            F60D93F60D93F60D93F60D93F60D93F60D93F60D93F60D93F60D93F60D93F60D
+            93F60D96F60D87F60D8AF21697F50D93F60D93F60D93F60D93F60D93F60D93F6
+            0D93F61A99F6008DF5008DF5008DF5008DF5008DF5008DF5008DF5008EF5008C
+            F50086F5007DF50082F6007AF5239AF2AAD7F51193F60088F5008DF5008DF500
+            8DF5008DF5008DF5008DF5008DF50D93F6008DF5008DF5008DF5008DF5008EF5
+            008EF5007EF5007CF3048DF356B2F53CA4F11B8DF0F1F8FCFFFFFF007BF50076
+            F4008CF5008EF5008DF5008DF5008DF5008DF50D93F60D93F6008DF5008DF500
+            8DF5008FF50088F60077F42798F3A2D1F8FFFEFDE5F1F872BDF0DFF2F9FFFFFF
+            BAE0FC60B4F04EAEF60078F30085F5008FF5008DF5008DF5008DF50D93F60D93
+            F6008DF5008DF5008FF50086F60079F178BEF4FFFFFDFFFFFFD9EEFC4EAEF2CC
+            E8FDFFFFFFFFFFFFA1D4F8ABD6F1FFFFFF92CAF7007DF40081F5008FF5008DF5
+            008DF50D93F60D93F6008DF5008DF5008AF60078F292CCF5FFFFFEFFFFFFAEDA
+            F940A7F1F5FBFFFFFFFFFFFFFFFFFFFFA8D7F986C5F1FFFFFFFFFFFFAFDCFB00
+            7CF30085F5008EF5008DF50D93F60D93F6008DF5008FF50074F464B9F3FFFFFF
+            FFFFFFFFFFFFC5E4FA6CBAF1E8F8FCFFFFFFFFFFFFFFFFFFA8D7F989C7F1FFFF
+            FFFFFFFFFFFFFF92CFF60077F3008DF6008DF50D93F60D93F6008DF50082F616
+            91F1FFFFFCFFFFFFFFFFFFFFFFFFFFFFFFE0F2F9238DEEC2E6FBFFFFFFFFFFFF
+            A6D6F893CBF0FFFFFFFFFFFFFFFFFFFFFFFD30A1F1007BF5008EF50D93F60D93
+            F6008EF50075F37DC6F6FFFFFFFFFFFFFFFFFFFFFFFFE5F2F8379DF20074F502
+            82F2BFE3FAFFFFFFA6D7FB84C8F2FFFFFFFFFFFFFFFFFFFFFFFFB7DDF7007CF3
+            008CF50D93F60D93F60088F60287F1DDEEF9FFFFFFFFFFFFFFFFFFFFFFFC279E
+            F00072F40091F6007EF5007EF2C7E4F8F5FBFF108FF3DEEFFAFFFFFFFFFFFFFF
+            FFFFF9FCFD0791F20085F50D93F60D93F60081F61F9CF2FFFFFDFFFFFFFFFFFF
+            FFFFFFA5D5F70076F2008DF6008DF50090F50081F5008AF274C0F70078F478C1
+            F6FFFFFFFFFFFFFFFFFFFFFFFD3BA6F3007DF50D93F60D93F6007FF42CA1F6FF
+            FFFFFFFFFFFFFFFFFFFFFF62B7F50077F40086F60089F5008EF5008FF50087F5
+            007FF4007AF448ACF5FFFFFFFFFFFFFFFFFFFFFFFF49AEF9007AF30D93F60D93
+            F60080F42CA0F6FFFFFFFFFFFFFFFFFFFFFFFF65B9F50075F42099F20084F300
+            88F6008FF5008DF5008DF50079F44CAEF6FFFFFFFFFFFFFFFFFFFFFFFF4AAEF7
+            007AF30D93F60D93F60082F61B9AF3FFFFFDFFFFFFFFFFFFFFFFFFB5DCF80069
+            EFB1DAF7A2D4F60075F30085F6008FF5008EF60070F291CCF6FFFFFFFFFFFFFF
+            FFFFFFFFFB35A4F1007EF60D93F60D93F60089F60083F1D3E9F7FFFFFFFFFFFF
+            FFFFFFFFFFFE2298F082C6F8FFFFFF8BCAF60078F20084F60076F41A96F2F3F9
+            FCFFFFFFFFFFFFFFFFFFF5FAFC038DF20087F50D93F60D93F6008EF50075F36D
+            BEF5FFFFFFFFFFFFFFFFFFFFFFFFACDBF980C4F5FFFFFFFFFFFF9ED3F60072F1
+            2E99F6ECF9FEFFFFFFFFFFFFFFFFFFFFFFFFA3D5F7007AF2008CF50D93F60D93
+            F6008DF50085F60B8AF2F5FAFBFFFFFFFFFFFFFFFFFFB2DCFB8ECCF6FFFFFFFF
+            FFFFFFFFFF9CD1F775C3F5FFFFFEFFFFFFFFFFFFFFFFFFFFFFFD1A96F2007FF5
+            008EF50D93F60D93F6008DF5008FF50077F445A9F3FFFFFFFFFFFFFFFFFFA9D8
+            FA8BCAF6FFFFFFFFFFFFFFFFFFFFFFFF6BBBF36CBBF3FFFFFFFFFFFFFFFFFF78
+            C1F40076F3008EF6008DF50D93F60D93F6008DF5008DF5008DF50075F365B6F8
+            FFFFFEFFFFFFA5D6FA8ACAF6FFFFFFFFFFFFFFFFFFA8D7F86ABAF3D6ECFCFFFF
+            FFFFFFFF92CCF70079F20088F6008EF5008DF50D93F60D93F6008DF5008DF500
+            8EF5008AF50075F353AAF4F7FAFCD4EEFB8ACAF6FFFFFFFFFFFF9ED2F661B6F1
+            FFFFFFFFFFFFFAFCFB72B9F40079F30086F5008FF5008DF5008DF50D93F60D93
+            F6008DF5008DF5008DF5008EF5008DF50077F41E98F350A6F3A2D5F9FFFFFF9C
+            D2F66BBAF1FFFEFCEAF5FB82C3F72095F30075F20089F6008FF5008DF5008DF5
+            008DF50D93F60D93F6008DF5008DF5008DF5008DF5008DF5008FF50081F5006A
+            F1C2E2F6BEE1F8007BF236A5F730A2F5008AF20078F30081F5008FF6008EF500
+            8DF5008DF5008DF5008DF50D93F6008DF5008DF5008DF5008DF5008DF5008DF5
+            008DF5008DF5018CF537A3F1008AF30083F50082F50081F50087F5008EF5008D
+            F5008DF5008DF5008DF5008DF5008DF5008DF5008DF51A99F60D93F60D93F60D
+            93F60D93F60D93F60D93F60D93F60D95F60D89F60D8DF60D95F60D93F60D93F6
+            0D93F60D93F60D93F60D93F60D93F60D93F60D93F60D93F60D93F61A99F6
+          }
+          Spacing = 0
+          TabOrder = 2
+        end
+      end
+    end
+    object tsLands: TTabSheet
+      Caption = 'Земля у володінні'
+      ClientHeight = 127
+      ClientWidth = 982
+      object dbgLands: TDBGrid
+        Left = 5
+        Height = 117
+        Top = 5
+        Width = 937
+        Align = alClient
+        AutoEdit = False
+        AutoFillColumns = True
+        BorderSpacing.Left = 5
+        BorderSpacing.Top = 5
+        BorderSpacing.Bottom = 5
+        Color = clWindow
+        Columns = <        
+          item
+            SizePriority = 0
+            Title.Alignment = taCenter
+            Title.Caption = 'Призначення'
+            Width = 300
+            FieldName = 'nazva'
+          end        
+          item
+            SizePriority = 0
+            Title.Alignment = taCenter
+            Title.Caption = 'Площа'
+            Width = 75
+            FieldName = 'ploshcha'
+            DisplayFormat = '##0.###0'
+          end        
+          item
+            SizePriority = 0
+            Title.Alignment = taCenter
+            Title.Caption = 'Кадастровий номер'
+            Width = 150
+            FieldName = 'kadastrovyi_nomer'
+          end        
+          item
+            Title.Alignment = taCenter
+            Title.Caption = 'Земельна ділянка перебуває'
+            Width = 190
+            FieldName = 'dogovir'
+          end        
+          item
+            SizePriority = 4
+            Title.Alignment = taCenter
+            Title.Caption = 'Примітка'
+            Width = 190
+            FieldName = 'prymitka'
+          end>
+        DataSource = dsLands
+        Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgDisableDelete, dgDisableInsert, dgCellHints, dgTruncCellHints, dgCellEllipsis, dgRowHighlight]
+        Scrollbars = ssVertical
+        ShowHint = True
+        TabOrder = 0
+        TitleFont.Style = [fsBold]
+        OnDblClick = dbgLandsDblClick
+      end
+      object pnlLands_Buttons: TPanel
+        Left = 942
+        Height = 127
+        Top = 0
+        Width = 40
+        Align = alRight
+        BevelOuter = bvNone
+        ClientHeight = 127
+        ClientWidth = 40
+        TabOrder = 1
+        object btnLands_Add: TBitBtn
+          Left = 5
+          Height = 30
+          Top = 5
+          Width = 30
+          Action = actLands_Add
+          Glyph.Data = {
+            DA060000424DDC060000000000001A0000000C000000180018000100180050A9
+            1A46A40D46A40D46A40D46A40D46A40D46A40D46A40D46A40D46A40D46A40D46
+            A40D46A40D46A40D46A40D46A40D46A40D46A40D46A40D46A40D46A40D46A40D
+            46A40D50A91A3C9F003C9F003C9F003C9F003C9F003C9F003C9F003FA0003A9E
+            00198E00178D00178D00178D00178D00198E003A9E003FA0003C9F003C9F003C
+            9F003C9F003C9F003C9F003C9F0046A40D3C9F003C9F003C9F003C9F003C9F00
+            3C9F00359C0041A20799CD799ECF809ECF809ECF809ECF8099CD7941A207359C
+            003C9F003C9F003C9F003C9F003C9F003C9F0046A40D46A40D3C9F003C9F003C
+            9F003C9F003C9F003C9F002A970048A50FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFF48A50F2A97003C9F003C9F003C9F003C9F003C9F003C9F0046A40D46A4
+            0D3C9F003C9F003C9F003C9F003C9F003C9F002D980046A40DF5FAF2FFFFFFFF
+            FFFFFFFFFFFFFFFFF5FAF246A40D2D98003C9F003C9F003C9F003C9F003C9F00
+            3C9F0046A40D46A40D3C9F003C9F003C9F003C9F003C9F003C9F002D980046A4
+            0DF5FAF2FFFFFFFFFFFFFFFFFFFFFFFFF5FAF246A40D2D98003C9F003C9F003C
+            9F003C9F003C9F003C9F0046A40D46A40D3C9F003C9F003C9F003C9F003C9F00
+            3C9F002D980046A40DF5FAF2FFFFFFFFFFFFFFFFFFFFFFFFF5FAF246A40D2D98
+            003C9F003C9F003C9F003C9F003C9F003C9F0046A40D46A40D3EA000389D002D
+            98002D98002D98002D98001D9000389D00F4FAF1FFFFFFFFFFFFFFFFFFFFFFFF
+            F4FAF1389D001D90002D98002D98002D98002D9800349B003FA00046A40D46A4
+            0D3A9E003FA00346A40D46A40D46A40D46A40D389D0D50A91AF6FAF3FFFFFFFF
+            FFFFFFFFFFFFFFFFF6FAF350A91A389D0D46A40D46A40D46A40D46A40D41A107
+            3A9E0046A40D46A40D2091006CB740F5FAF2F5FAF2F5FAF2F5FAF2F4FAF2F5FA
+            F2FEFFFEFFFFFFFFFFFFFFFFFFFFFFFFFEFFFEF5FAF2F4FAF2F5FAF2F5FAF2F5
+            FAF2F5FAF299CD79198E0046A40D46A40D1C8F0073BA48FFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFA6D38A148C0046A40D46A40D1E90006FB843FF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF9ECF80178D0046A40D46A4
+            0D1E90006FB843FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF9ECF80
+            178D0046A40D46A40D1C8F0073BA48FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFA6D38A148C0046A40D46A40D2091006CB740F5FAF2F5FAF2F5FAF2
+            F5FAF2F4FAF2F5FAF2FEFFFEFFFFFFFFFFFFFFFFFFFFFFFFFEFFFEF5FAF2F4FA
+            F2F5FAF2F5FAF2F5FAF2F5FAF299CD79198E0046A40D46A40D3A9E003FA00346
+            A40D46A40D46A40D46A40D389D0D50A91AF6FAF3FFFFFFFFFFFFFFFFFFFFFFFF
+            F6FAF350A91A389D0D46A40D46A40D46A40D46A40D41A1073A9E0046A40D46A4
+            0D3EA000389D002D98002D98002D98002D98001D9000389D00F4FAF1FFFFFFFF
+            FFFFFFFFFFFFFFFFF4FAF1389D001D90002D98002D98002D98002D9800349B00
+            3FA00046A40D46A40D3C9F003C9F003C9F003C9F003C9F003C9F002D980046A4
+            0DF5FAF2FFFFFFFFFFFFFFFFFFFFFFFFF5FAF246A40D2D98003C9F003C9F003C
+            9F003C9F003C9F003C9F0046A40D46A40D3C9F003C9F003C9F003C9F003C9F00
+            3C9F002D980046A40DF5FAF2FFFFFFFFFFFFFFFFFFFFFFFFF5FAF246A40D2D98
+            003C9F003C9F003C9F003C9F003C9F003C9F0046A40D46A40D3C9F003C9F003C
+            9F003C9F003C9F003C9F002D980046A40DF9FCF7FFFFFFFFFFFFFFFFFFFFFFFF
+            F9FCF746A40D2D98003C9F003C9F003C9F003C9F003C9F003C9F0046A40D46A4
+            0D3C9F003C9F003C9F003C9F003C9F003C9F002B970047A50EFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFF47A50E2B97003C9F003C9F003C9F003C9F003C9F00
+            3C9F0046A40D46A40D3C9F003C9F003C9F003C9F003C9F003C9F00389D003FA0
+            036DB7406FB8436FB8436FB8436FB8436DB7403FA003389D003C9F003C9F003C
+            9F003C9F003C9F003C9F0046A40D3C9F003C9F003C9F003C9F003C9F003C9F00
+            3C9F003EA0003A9E001F91001E90001E90001E90001E90001F91003A9E003EA0
+            003C9F003C9F003C9F003C9F003C9F003C9F003C9F0050A91A46A40D46A40D46
+            A40D46A40D46A40D46A40D46A40D46A40D46A40D46A40D46A40D46A40D46A40D
+            46A40D46A40D46A40D46A40D46A40D46A40D46A40D46A40D46A40D50A91A
+          }
+          Margin = 1
+          Spacing = 5
+          TabOrder = 0
+        end
+        object btnLands_Upd: TBitBtn
+          Left = 5
+          Height = 30
+          Top = 35
+          Width = 30
+          Action = actLands_Upd
+          Glyph.Data = {
+            DA060000424DDC060000000000001A0000000C00000018001800010018001A99
+            F60D93F60D93F60D93F60D93F60D93F60D93F60D93F60D93F60D93F60D93F60D
+            93F60D96F60D87F60D8AF21697F50D93F60D93F60D93F60D93F60D93F60D93F6
+            0D93F61A99F6008DF5008DF5008DF5008DF5008DF5008DF5008DF5008EF5008C
+            F50086F5007DF50082F6007AF5239AF2AAD7F51193F60088F5008DF5008DF500
+            8DF5008DF5008DF5008DF5008DF50D93F6008DF5008DF5008DF5008DF5008EF5
+            008EF5007EF5007CF3048DF356B2F53CA4F11B8DF0F1F8FCFFFFFF007BF50076
+            F4008CF5008EF5008DF5008DF5008DF5008DF50D93F60D93F6008DF5008DF500
+            8DF5008FF50088F60077F42798F3A2D1F8FFFEFDE5F1F872BDF0DFF2F9FFFFFF
+            BAE0FC60B4F04EAEF60078F30085F5008FF5008DF5008DF5008DF50D93F60D93
+            F6008DF5008DF5008FF50086F60079F178BEF4FFFFFDFFFFFFD9EEFC4EAEF2CC
+            E8FDFFFFFFFFFFFFA1D4F8ABD6F1FFFFFF92CAF7007DF40081F5008FF5008DF5
+            008DF50D93F60D93F6008DF5008DF5008AF60078F292CCF5FFFFFEFFFFFFAEDA
+            F940A7F1F5FBFFFFFFFFFFFFFFFFFFFFA8D7F986C5F1FFFFFFFFFFFFAFDCFB00
+            7CF30085F5008EF5008DF50D93F60D93F6008DF5008FF50074F464B9F3FFFFFF
+            FFFFFFFFFFFFC5E4FA6CBAF1E8F8FCFFFFFFFFFFFFFFFFFFA8D7F989C7F1FFFF
+            FFFFFFFFFFFFFF92CFF60077F3008DF6008DF50D93F60D93F6008DF50082F616
+            91F1FFFFFCFFFFFFFFFFFFFFFFFFFFFFFFE0F2F9238DEEC2E6FBFFFFFFFFFFFF
+            A6D6F893CBF0FFFFFFFFFFFFFFFFFFFFFFFD30A1F1007BF5008EF50D93F60D93
+            F6008EF50075F37DC6F6FFFFFFFFFFFFFFFFFFFFFFFFE5F2F8379DF20074F502
+            82F2BFE3FAFFFFFFA6D7FB84C8F2FFFFFFFFFFFFFFFFFFFFFFFFB7DDF7007CF3
+            008CF50D93F60D93F60088F60287F1DDEEF9FFFFFFFFFFFFFFFFFFFFFFFC279E
+            F00072F40091F6007EF5007EF2C7E4F8F5FBFF108FF3DEEFFAFFFFFFFFFFFFFF
+            FFFFF9FCFD0791F20085F50D93F60D93F60081F61F9CF2FFFFFDFFFFFFFFFFFF
+            FFFFFFA5D5F70076F2008DF6008DF50090F50081F5008AF274C0F70078F478C1
+            F6FFFFFFFFFFFFFFFFFFFFFFFD3BA6F3007DF50D93F60D93F6007FF42CA1F6FF
+            FFFFFFFFFFFFFFFFFFFFFF62B7F50077F40086F60089F5008EF5008FF50087F5
+            007FF4007AF448ACF5FFFFFFFFFFFFFFFFFFFFFFFF49AEF9007AF30D93F60D93
+            F60080F42CA0F6FFFFFFFFFFFFFFFFFFFFFFFF65B9F50075F42099F20084F300
+            88F6008FF5008DF5008DF50079F44CAEF6FFFFFFFFFFFFFFFFFFFFFFFF4AAEF7
+            007AF30D93F60D93F60082F61B9AF3FFFFFDFFFFFFFFFFFFFFFFFFB5DCF80069
+            EFB1DAF7A2D4F60075F30085F6008FF5008EF60070F291CCF6FFFFFFFFFFFFFF
+            FFFFFFFFFB35A4F1007EF60D93F60D93F60089F60083F1D3E9F7FFFFFFFFFFFF
+            FFFFFFFFFFFE2298F082C6F8FFFFFF8BCAF60078F20084F60076F41A96F2F3F9
+            FCFFFFFFFFFFFFFFFFFFF5FAFC038DF20087F50D93F60D93F6008EF50075F36D
+            BEF5FFFFFFFFFFFFFFFFFFFFFFFFACDBF980C4F5FFFFFFFFFFFF9ED3F60072F1
+            2E99F6ECF9FEFFFFFFFFFFFFFFFFFFFFFFFFA3D5F7007AF2008CF50D93F60D93
+            F6008DF50085F60B8AF2F5FAFBFFFFFFFFFFFFFFFFFFB2DCFB8ECCF6FFFFFFFF
+            FFFFFFFFFF9CD1F775C3F5FFFFFEFFFFFFFFFFFFFFFFFFFFFFFD1A96F2007FF5
+            008EF50D93F60D93F6008DF5008FF50077F445A9F3FFFFFFFFFFFFFFFFFFA9D8
+            FA8BCAF6FFFFFFFFFFFFFFFFFFFFFFFF6BBBF36CBBF3FFFFFFFFFFFFFFFFFF78
+            C1F40076F3008EF6008DF50D93F60D93F6008DF5008DF5008DF50075F365B6F8
+            FFFFFEFFFFFFA5D6FA8ACAF6FFFFFFFFFFFFFFFFFFA8D7F86ABAF3D6ECFCFFFF
+            FFFFFFFF92CCF70079F20088F6008EF5008DF50D93F60D93F6008DF5008DF500
+            8EF5008AF50075F353AAF4F7FAFCD4EEFB8ACAF6FFFFFFFFFFFF9ED2F661B6F1
+            FFFFFFFFFFFFFAFCFB72B9F40079F30086F5008FF5008DF5008DF50D93F60D93
+            F6008DF5008DF5008DF5008EF5008DF50077F41E98F350A6F3A2D5F9FFFFFF9C
+            D2F66BBAF1FFFEFCEAF5FB82C3F72095F30075F20089F6008FF5008DF5008DF5
+            008DF50D93F60D93F6008DF5008DF5008DF5008DF5008DF5008FF50081F5006A
+            F1C2E2F6BEE1F8007BF236A5F730A2F5008AF20078F30081F5008FF6008EF500
+            8DF5008DF5008DF5008DF50D93F6008DF5008DF5008DF5008DF5008DF5008DF5
+            008DF5008DF5018CF537A3F1008AF30083F50082F50081F50087F5008EF5008D
+            F5008DF5008DF5008DF5008DF5008DF5008DF5008DF51A99F60D93F60D93F60D
+            93F60D93F60D93F60D93F60D93F60D95F60D89F60D8DF60D95F60D93F60D93F6
+            0D93F60D93F60D93F60D93F60D93F60D93F60D93F60D93F60D93F61A99F6
+          }
+          Margin = 1
+          Spacing = 5
+          TabOrder = 1
+        end
+        object btnLands_Del: TBitBtn
+          Left = 5
+          Height = 30
+          Top = 65
+          Width = 30
+          Action = actLands_Del
+          Glyph.Data = {
+            F6060000424DF806000000000000360000002800000018000000180000000100
+            180000000000C2060000120B0000120B000000000000000000003A1AE22F0DE1
+            2F0DE12F0DE12F0DE12F0DE12F0DE12E0DE12D0DE12E0DE12E0DE12E0DE12E0D
+            E12E0DE12E0DE12D0DE12E0DE12F0DE12F0DE12F0DE12F0DE12F0DE12F0DE13A
+            1AE22400DF2400DF2400DF2400DF2400DF2A00E01700DD0000DA0200DA0100DA
+            0100DA0100DA0100DA0100DA0100DA0200DA0000DA1500DD2900E02400DF2400
+            DF2400DF2400DF2400DF2F0DE12400DF2400DF2400DF2500DF1500DD2404DF92
+            80EFAA9CF3A495F2A293F2A697F2A698F2A293F2A394F2AA9CF39786F02B0BE0
+            1300DD2500DF2400DF2400DF2400DF2F0DE12F0DE12400DF2400DF2400DF2100
+            DF0500DBB0A3F3FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFC2B7F60C00DC1E00DE2400DF2400DF2400DF2F0DE12F0DE12400DF
+            2400DF2400DF1900DE1E00DEF3F1FDFFFFFF6950E9CDC4F8FFFFFF9381EF826E
+            EDFFFFFFDED8FA644FE8F9F9FEFEFEFF2400DF1700DD2400DF2400DF2400DF2F
+            0DE12F0DE12400DF2400DF2400DF1A00DE1D00DEEBE8FCFFFFFF0300DAA394F1
+            FFFFFF4425E3300EE1FFFFFFC9C0F70000D8EDEAFDFEFDFF2100DF1800DD2400
+            DF2400DF2400DF2F0DE12F0DE12400DF2400DF2400DF1A00DE1C00DEE8E4FCFF
+            FFFF2400DFAFA2F3FFFFFF5D42E74B2EE5FFFFFFD0C8F81900DDEFEDFDF9F8FE
+            2100DF1800DD2400DF2400DF2400DF2F0DE12F0DE12400DF2400DF2400DF1A00
+            DE1C00DEE8E4FCFFFFFF2400DFAFA2F3FFFFFF5D42E74B2EE5FFFFFFD0C8F819
+            00DDEFEDFDF9F8FE2100DF1800DD2400DF2400DF2400DF2F0DE12F0DE12400DF
+            2400DF2400DF1A00DE1C00DEE8E4FCFFFFFF2400DFAFA2F3FFFFFF5D42E74B2E
+            E5FFFFFFD0C8F81900DDEFEDFDF9F8FE2100DF1800DD2400DF2400DF2400DF2F
+            0DE12F0DE12400DF2400DF2400DF1A00DE1C00DEE8E4FCFFFFFF2400DFAFA2F3
+            FFFFFF5D42E74B2EE5FFFFFFD0C8F81900DDEFEDFDF9F8FE2100DF1800DD2400
+            DF2400DF2400DF2F0DE12F0DE12400DF2400DF2400DF1A00DE1C00DEE8E4FCFF
+            FFFF2400DFAFA2F3FFFFFF5D42E74B2EE5FFFFFFD0C8F81900DDEFEDFDF9F8FE
+            2100DF1800DD2400DF2400DF2400DF2F0DE12F0DE12400DF2400DF2400DF1A00
+            DE1C00DEE8E4FCFFFFFF2400DFAFA2F3FFFFFF5D42E74B2EE5FFFFFFD0C8F819
+            00DDEFEDFDF9F8FE2100DF1800DD2400DF2400DF2400DF2F0DE12F0DE12400DF
+            2400DF2400DF1A00DE1C00DEE8E4FCFFFFFF2400DFAFA2F3FFFFFF5D42E74B2E
+            E5FFFFFFD0C8F81900DDEFEDFDF9F8FE2100DF1800DD2400DF2400DF2400DF2F
+            0DE12F0DE12400DF2400DF2400DF1A00DE1C00DEE9E5FCFFFFFF1700DDAA9CF2
+            FFFFFF5336E64123E4FFFFFFCDC5F80B00DBEDEAFDFBFAFE2100DF1800DD2400
+            DF2400DF2400DF2F0DE12F0DE12400DF2400DF2400DF1A00DE1C00DEE7E4FCFF
+            FFFF2300DFB1A5F3FFFFFF5E44E7492CE5FFFFFFD0C8F81900DDF3F1FDF7F6FE
+            2100DF1800DD2400DF2400DF2400DF2F0DE12F0DE12400DF2400DF2400DF1900
+            DE1B00DEF2F0FDFFFFFFFDFCFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFC
+            FAFFFFFFFFFAF9FF2000DF1700DD2400DF2400DF2400DF2F0DE12F0DE12400DF
+            2400DF2600DF1E00DE0000D9907EEFB2A5F4C7BEF7B7ACF4B0A3F3C0B6F6C3BA
+            F6B0A3F3B5A9F4C8BFF7B2A5F49684F00100DA1C00DE2600DF2400DF2400DF2F
+            0DE12F0DE12400DF2400DF1E00DE2300DF9684F08E7CEE8D7BEE8C79EE8C79EE
+            8C79EE8C79EE8C79EE8C79EE8C79EE8C79EE8D7BEE8E7CEE9684EF2600DF1D00
+            DE2400DF2400DF2F0DE12F0DE12400DF2400DF1E00DE0600DBD5CDF9FFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            DED8FA0600DB1E00DE2400DF2400DF2F0DE12F0DE12400DF2400DF2500DF1500
+            DD1F01DE9D8CF1B9AEF5BCAEF5B8ABF59E8EF19A89F09A89F09D8CF0B6A9F4BC
+            AEF5BAAEF5A191F1280AE01300DD2500DF2400DF2400DF2F0DE12F0DE12400DF
+            2400DF2400DF2900E01700DD0100DA0800DB0000D82101DFAA9CF2B7ACF4B7AC
+            F4AEA0F32301DF0000D80800DB0200DA1500DD2900E02400DF2400DF2400DF2F
+            0DE12F0DE12400DF2400DF2400DF2400DF2400DF2300DF2100DF1800DD2308DF
+            8B78EEAA9CF3AA9CF3907EEF270ADF1700DD2100DF2200DF2400DF2400DF2400
+            DF2400DF2400DF2F0DE12400DF2400DF2400DF2400DF2400DF2400DF2400DF24
+            00DF2700DF2200DF0200DA0000D90000D90000DA2100DE2800DF2400DF2400DF
+            2400DF2400DF2400DF2400DF2400DF2400DF3A1AE22F0DE12F0DE12F0DE12F0D
+            E12F0DE12F0DE12F0DE12F0DE12F0DE12F0DE12F0DE12F0DE12F0DE12F0DE12F
+            0DE12F0DE12F0DE12F0DE12F0DE12F0DE12F0DE12F0DE13A1AE2
+          }
+          Margin = 1
+          Spacing = 5
+          TabOrder = 2
+        end
+      end
+    end
+  end
+  object MainMenu: TMainMenu
+    left = 80
+    top = 100
+    object mmReferences: TMenuItem
+      Caption = 'Довідники'
+      object mmGeneral_Data: TMenuItem
+        Caption = 'Загальні дані'
+        OnClick = mmGeneral_DataClick
+      end
+      object mmHouse: TMenuItem
+        Caption = 'Господарство'
+        OnClick = mmHouseClick
+      end
+      object mmPopulation: TMenuItem
+        Caption = 'Населення'
+        OnClick = mmPopulationClick
+      end
+      object mmReferencesLine_1: TMenuItem
+        Caption = '-'
+      end
+      object mmRegion: TMenuItem
+        Caption = 'Область'
+        OnClick = mmReferenceClick
+      end
+      object mmDistrict: TMenuItem
+        Caption = 'Район'
+        OnClick = mmReferenceClick
+      end
+      object mmVillage: TMenuItem
+        Caption = 'Село'
+        OnClick = mmReferenceClick
+      end
+      object mmReferencesLine_2: TMenuItem
+        Caption = '-'
+      end
+      object mmStreetType: TMenuItem
+        Caption = 'Тип вулиці'
+        OnClick = mmReferenceClick
+      end
+      object mmStreet: TMenuItem
+        Caption = 'Вулиця'
+        OnClick = mmReferenceClick
+      end
+      object mmReferencesLine_3: TMenuItem
+        Caption = '-'
+      end
+      object mmNationality: TMenuItem
+        Caption = 'Громадянство'
+        OnClick = mmReferenceClick
+      end
+      object mmAffinity: TMenuItem
+        Caption = 'Спорідненість'
+        OnClick = mmReferenceClick
+      end
+      object mmReferencesLine_4: TMenuItem
+        Caption = '-'
+      end
+      object mmLands_Purpose: TMenuItem
+        Caption = 'Призначення земельної ділянки'
+        OnClick = mmReferenceClick
+      end
+    end
+    object mmWindows: TMenuItem
+      Caption = 'Вікно'
+    end
+    object mmProgram: TMenuItem
+      Caption = 'Програма'
+      object mmAbout: TMenuItem
+        Caption = 'Про програму'
+        OnClick = mmAboutClick
+      end
+      object mmHelp: TMenuItem
+        Caption = 'Довідка'
+        OnClick = mmHelpClick
+      end
+      object mmProgramLine_1: TMenuItem
+        Caption = '-'
+      end
+      object mmPassword: TMenuItem
+        Caption = 'Змінити пароль'
+        OnClick = mmPasswordClick
+      end
+      object mmUsers: TMenuItem
+        Caption = 'Користувачі'
+        OnClick = mmUsersClick
+      end
+      object mmProgramLine_2: TMenuItem
+        Caption = '-'
+      end
+      object mmBackup: TMenuItem
+        Caption = 'Резервна копія'
+        OnClick = mmBackupClick
+      end
+      object mmProgramLine_3: TMenuItem
+        Caption = '-'
+      end
+      object mmClose: TMenuItem
+        Caption = 'Вихід'
+        OnClick = btnCloseClick
+      end
+    end
+  end
+  object ActionList: TActionList
+    left = 50
+    top = 100
+    object actPrint: TAction
+      Caption = 'Друк'
+      OnExecute = actPrintExecute
+      ShortCut = 116
+    end
+    object actAdd: TAction
+      Caption = 'Новий мешканець'
+      Hint = 'Додати до бази даних інформацію про нового мешканця'
+      OnExecute = actAddUpdExecute
+      ShortCut = 114
+    end
+    object actUpd: TAction
+      Caption = 'Корекція даних'
+      Hint = 'Оновити інформацію про особу'
+      OnExecute = actAddUpdExecute
+      ShortCut = 115
+    end
+    object actDel: TAction
+      Caption = 'Видалити мешканця'
+      Hint = 'Видалити з бази даних інформацію про мешканця'
+      OnExecute = actDelExecute
+      Visible = False
+    end
+    object actFamily_Add: TAction
+      Category = 'Family'
+      Caption = 'Новий мешканець'
+      Hint = 'Додати до бази даних інформацію про приналежність до поточного господарства нового мешканця'
+      OnExecute = actFamilyAddUpdExecute
+      ShortCut = 16498
+    end
+    object actFamily_Upd: TAction
+      Category = 'Family'
+      Caption = 'Корекція даних мешканця'
+      Hint = 'Корекція даних про мешканця господарства'
+      OnExecute = actFamilyAddUpdExecute
+      ShortCut = 16499
+    end
+    object actFamily_Del: TAction
+      Category = 'Family'
+      Caption = 'Видалити інформацію про мешканця'
+      Hint = 'Видалити з бази даних інформацію про приналежність особи до поточного господарства'
+      OnExecute = actFamily_DelExecute
+      ShortCut = 16503
+    end
+    object actLands_Add: TAction
+      Category = 'Lands'
+      Caption = 'Додати інформацію про землю'
+      Hint = 'Додати інформацію про земельні ділянки, які перебувають у власності особи'
+      OnExecute = actLandsAddUpdExecute
+      ShortCut = 8306
+    end
+    object actLands_Upd: TAction
+      Category = 'Lands'
+      Caption = 'Корекція даних про землю'
+      Hint = 'Оновити інформацію про земельні ділянки, які перебувають у власності особи'
+      OnExecute = actLandsAddUpdExecute
+      ShortCut = 8307
+    end
+    object actLands_Del: TAction
+      Category = 'Lands'
+      Caption = 'Видалити інформацію про землю'
+      Hint = 'Видалити інформацію про земельні ділянки, які перебувають у власності особи'
+      OnExecute = actLands_DelExecute
+      ShortCut = 8311
+    end
+    object actSetCurrentHouse: TAction
+      Caption = 'Перехід на поточне господарство'
+      OnExecute = actSetCurrentHouseExecute
+    end
+    object actExport: TAction
+      Caption = 'Експорт'
+      OnExecute = actExportExecute
+    end
+    object actSetCurrentPerson: TAction
+      Category = 'Family'
+      Caption = 'Перехід на поточну особу'
+      OnExecute = actSetCurrentPersonExecute
+    end
+    object actFamily_Upd_Person: TAction
+      Category = 'Family'
+      Caption = 'Корекція даних особи'
+      OnExecute = actFamily_Upd_PersonExecute
+    end
+  end
+  object tmrSearch: TTimer
+    Enabled = False
+    Interval = 500
+    OnTimer = tmrSearchTimer
+    left = 110
+    top = 100
+  end
+  object tmrScroll: TTimer
+    Enabled = False
+    Interval = 100
+    OnTimer = tmrScrollTimer
+    left = 140
+    top = 100
+  end
+  object qFamily: TSQLQuery
+    FieldDefs = <>
+    AfterOpen = qFamilyAfterOpen
+    Database = dm.MySQLDB56
+    Transaction = dm.MainTransaction
+    SQL.Strings = (
+      'select'
+      '    *'
+      'from ('
+      '    select'
+      '        n.*,'
+      '        m.ID MESHKANTSI_ID,'
+      '        m.ID_HOSPODARSTVO,'
+      '        m.ID_NASELENNIA,'
+      '        m.DATA_REIESTRATSII,'
+      '        m.DATA_VYBUTTIA,'
+      '        m.TYMCHASOVO_VYBUV,'
+      '        m.OSTATOCHNO_VYBUV,'
+      '        h.NAZVA NATIONALITY,'
+      '        m.STATUS_PROZHYVANNIA,'
+      '            case'
+      '              when m.STATUS_PROZHYVANNIA = 1 then ''Не проживає'''
+      '              when m.STATUS_PROZHYVANNIA = 2 then ''Проживає без реєстрації'''
+      '              else '''''
+      '            end STATUS_PROZHYVANNIA_INFO,'
+      '        if(n.DATA_SMERTI is not null,'
+      '          (select timestampdiff(YEAR, n.DATA_NARODZHENNIA, n.DATA_SMERTI)),'
+      '          (select timestampdiff(YEAR, n.DATA_NARODZHENNIA,     curdate())))     AGE,'
+      '        if(n.STAT = 1, ''Жінка'', ''Чоловік'')                                      SEX,'
+      '        concat(trim(n.PRIZVYSHCHE), '' '', trim(n.IMIA), '' '', trim(n.PO_BATKOVI)) FULLNAME,'
+      '        concat(trim(n.SERIIA_PASPORTU), '' '', trim(n.NOMER_PASPORTU))            PASSPORT,'
+      '        c.ID SPORIDNENIST_ID,'
+      '        t.ID RELATIONSHIP_ID,'
+      '        if(m.ID_NASELENNIA = :prm_Person, ''заявник'', t.NAZVA) RELATIONSHIP,'
+      '        if(m.ID_NASELENNIA = :prm_Person, 0, 1)               RELATIONSHIP_ORDER'
+      '    from MESHKANTSI m'
+      '        inner join NASELENNIA        n on (m.ID_NASELENNIA        = n.ID)'
+      '        inner join HROMADIANSTVO     h on (n.ID_HROMADIANSTVO     = h.ID)'
+      '        inner join HOSPODARSTVO      x on (m.ID_HOSPODARSTVO      = x.ID)'
+      '        left  join SPORIDNENIST      c on (m.ID_NASELENNIA        = c.ID_NASELENNIA_KHTO)'
+      '                                      and (:prm_Person            = c.ID_NASELENNIA_KOMU)'
+      '        left  join TYP_SPORIDNENOSTI t on (c.ID_TYP_SPORIDNENOSTI = t.ID)'
+      '    where (1 = 1)'
+      '      and (m.ID_HOSPODARSTVO = :prm_House)'
+      ') q'
+      'where (1 = 1)'
+      ''
+      '  and ((q.TYMCHASOVO_VYBUV = 0) /*or (q.TYMCHASOVO_VYBUV    = 1)*/) -- Тимчасово вибув'
+      '  and ((q.OSTATOCHNO_VYBUV = 0) /*or (q.OSTATOCHNO_VYBUV    = 1)*/) -- Остаточно вибув'
+      '  and ((q.DATA_SMERTI  is null) /*or (q.DATA_SMERTI is not null)*/) -- Живі або мертві'
+      ''
+      'order by q.RELATIONSHIP_ORDER, q.RELATIONSHIP_ID'
+    )
+    InsertSQL.Strings = (
+      'insert into MESHKANTSI'
+      '( ID_HOSPODARSTVO,  ID_NASELENNIA) values'
+      '(:ID_Hospodarstvo, :ID_Naselennia)'
+    )
+    DeleteSQL.Strings = (
+      ''
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'prm_Person'
+        ParamType = ptInput
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'prm_House'
+        ParamType = ptInput
+      end>
+    left = 50
+    top = 400
+  end
+  object dsFamily: TDataSource
+    DataSet = qFamily
+    left = 80
+    top = 400
+  end
+  object frDSFamily: TfrDBDataSet
+    CloseDataSource = True
+    DataSet = qFamily
+    left = 50
+    top = 525
+  end
+  object qLocation: TSQLQuery
+    FieldDefs = <>
+    Database = dm.MySQLDB56
+    Transaction = dm.MainTransaction
+    SQL.Strings = (
+      'select'
+      '    *'
+      'from SELO'
+      'where (1 = 1)'
+      '  and (DOSTUP > 0)'
+      'order by NAZVA'
+    )
+    Params = <>
+    left = 50
+    top = 20
+  end
+  object dsLocation: TDataSource
+    DataSet = qLocation
+    left = 80
+    top = 20
+  end
+  object pUpmPrint: TPopupMenu
+    left = 815
+    top = 672
+    object pmPrint: TMenuItem
+      Action = actPrint
+      OnClick = actPrintExecute
+    end
+    object pmDesign: TMenuItem
+      Caption = 'Дизайнер'
+      OnClick = actPrintExecute
+    end
+  end
+  object qLands: TSQLQuery
+    FieldDefs = <>
+    AfterOpen = qLandsAfterOpen
+    Database = dm.MySQLDB56
+    Transaction = dm.MainTransaction
+    SQL.Strings = (
+      'select'
+      '    z.*,'
+      '    t.NAZVA'
+      'from ZEMLIA z'
+      '    inner join NASELENNIA n on (z.ID_NASELENNIA = n.ID)'
+      '    inner join TYP_ZEMLI  t on (z.ID_TYP_ZEMLI  = t.ID)'
+      'where (1 = 1)'
+      '  and (n.ID = :prm_Person)'
+      'order by z.ID_TYP_ZEMLI'
+      ''
+      ''
+      ''
+      ''
+      ''
+    )
+    DeleteSQL.Strings = (
+      'delete from ZEMLIA'
+      'where (ID = :prm_ID)'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'prm_Person'
+        ParamType = ptInput
+      end>
+    left = 50
+    top = 430
+  end
+  object dsLands: TDataSource
+    DataSet = qLands
+    left = 80
+    top = 430
+  end
+  object frDSLands: TfrDBDataSet
+    DataSet = qLands
+    left = 150
+    top = 525
+  end
+  object qPopulation: TSQLQuery
+    FieldDefs = <>
+    AfterOpen = qPopulationAfterOpen
+    AfterScroll = qQueryAfterScroll
+    Database = dm.MySQLDB56
+    Transaction = dm.MainTransaction
+    SQL.Strings = (
+      'select'
+      '    q.*'
+      'from ('
+      '    select'
+      '        n.*,'
+      '        if(n.DATA_SMERTI is not null,'
+      '          (select timestampdiff(YEAR, n.DATA_NARODZHENNIA, n.DATA_SMERTI)),'
+      '          (select timestampdiff(YEAR, n.DATA_NARODZHENNIA,     curdate())))     AGE,'
+      '        if(n.STAT = 1, ''Жінка'', ''Чоловік'')                                      SEX,'
+      '        concat(trim(n.PRIZVYSHCHE), '' '', trim(n.IMIA), '' '', trim(n.PO_BATKOVI)) FULLNAME,'
+      '        concat(trim(n.SERIIA_PASPORTU), '' '', trim(n.NOMER_PASPORTU), '' виданий '', trim(n.DATA_PASPORTU),'' '', trim(n.ORGAN_PASPORTU)) PASSPORT,'
+      '        h.NAZVA                                                                 NATIONALITY,'
+      '        m.ID_HOSPODARSTVO,'
+      '        m.STATUS_PROZHYVANNIA,'
+      '        m.DATA_REIESTRATSII,'
+      '        m.DATA_VYBUTTIA,'
+      '        case'
+      '          when m.STATUS_PROZHYVANNIA = 1 then ''Не проживає'''
+      '          when m.STATUS_PROZHYVANNIA = 2 then ''Проживає без реєстрації'''
+      '          else '''''
+      '        end STATUS_PROZHYVANNIA_INFO,'
+      '        x.ID_SELO,'
+      '        x.NOMER,'
+      '        x.ADRESA ADRESA_HOSPODARSTVA,'
+      '        s.ID_OBLAST,'
+      '        s.ID_RAION,'
+      '        s.NAZVA         VILLAGE,'
+      '        o.NAZVA         REGION,'
+      '        o.NAZVA_RODOVYI REGION_R,'
+      '        r.NAZVA         AREA,'
+      '        r.NAZVA_RODOVYI AREA_R'
+      '    from NASELENNIA n'
+      '        inner join HROMADIANSTVO h on (n.ID_HROMADIANSTVO = h.ID)'
+      '        left  join MESHKANTSI    m on (n.ID               = m.ID_NASELENNIA)'
+      '                                  and (m.TYMCHASOVO_VYBUV = 0)'
+      '                                  and (m.OSTATOCHNO_VYBUV = 0)'
+      '        left  join HOSPODARSTVO  x on (m.ID_HOSPODARSTVO  = x.ID)'
+      '        left  join SELO          s on (x.ID_SELO          = s.ID)'
+      '        left  join OBLAST        o on (s.ID_OBLAST        = o.ID)'
+      '        left  join RAION         r on (s.ID_RAION         = r.ID)'
+      ') q'
+      'where (q.ID > 0)'
+      '  and (q.ID_SELO = :prm_Selo)                                             -- Село'
+      '  and ((1 = 0) or (q.STAT            = 0) or (q.STAT                = 1)) -- Стать'
+      '  and ((1 = 0) or (q.DATA_SMERTI is null) or (q.DATA_SMERTI is not null)) -- Живі або неживі'
+      '  and (q.AGE < 18)                                                        -- Неповнолітні'
+      '  and (q.ID_HOSPODARSTVO is null)                                         -- Без господарства'
+      ''
+      ''
+      '                                                                          -- Пошук'
+      'order by q.FULLNAME'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'prm_Selo'
+        ParamType = ptInput
+      end>
+    left = 50
+    top = 150
+  end
+  object dsPopulation: TDataSource
+    DataSet = qPopulation
+    left = 80
+    top = 150
+  end
+  object frDSPopulation: TfrDBDataSet
+    DataSet = qPopulation
+    left = 140
+    top = 150
+  end
+  object pUpmPopulation: TPopupMenu
+    left = 110
+    top = 150
+    object pmPopulation_Add: TMenuItem
+      Action = actAdd
+    end
+    object pmPopulation_Upd: TMenuItem
+      Action = actUpd
+    end
+    object pmPopulation_Del: TMenuItem
+      Action = actDel
+    end
+    object pmPopulation_Line_1: TMenuItem
+      Caption = '-'
+    end
+    object pmPopulation_SetCurrentHouse: TMenuItem
+      Action = actSetCurrentHouse
+    end
+    object pmPopulation_Line_2: TMenuItem
+      Caption = '-'
+    end
+    object pmPopulation_Print: TMenuItem
+      Action = actPrint
+    end
+    object pmExport: TMenuItem
+      Action = actExport
+    end
+    object pmPopulation_Line_3: TMenuItem
+      Caption = '-'
+    end
+    object pmPopulation_Columns: TMenuItem
+      AutoCheck = True
+      Caption = 'Колонки'
+      object pmPopulation_Columns_Passport: TMenuItem
+        AutoCheck = True
+        Caption = 'Паспортні дані'
+        OnClick = pmGridColumnsVisibleClick
+      end
+    end
+  end
+  object frDSHouse: TfrDBDataSet
+    DataSet = qHouse
+    left = 140
+    top = 180
+  end
+  object dsHouse: TDataSource
+    DataSet = qHouse
+    left = 80
+    top = 180
+  end
+  object qHouse: TSQLQuery
+    FieldDefs = <>
+    AfterOpen = qHouseAfterOpen
+    AfterScroll = qQueryAfterScroll
+    Database = dm.MySQLDB56
+    Transaction = dm.MainTransaction
+    SQL.Strings = (
+      'select'
+      '    q.*'
+      'from ('
+      '    select'
+      '        x.ID,'
+      '        x.ID_SELO,'
+      '        x.NOMER,'
+      '        x.ADRESA,'
+      '        s.NAZVA,'
+      '        count(m.ID) INHABITANTS_COUNT'
+      '    from HOSPODARSTVO x'
+      '        inner join SELO       s on (x.ID_SELO = s.ID)'
+      '        left  join MESHKANTSI m on (x.ID      = m.ID_HOSPODARSTVO)'
+      '    where (1 = 1)'
+      '    group by 1, 2, 3, 4, 5'
+      ') q'
+      'where (1 = 1)'
+      ''
+      ''
+      ''
+      ''
+      'order by q.NOMER'
+    )
+    Params = <>
+    left = 50
+    top = 180
+  end
+  object sqlQuery: TSQLQuery
+    FieldDefs = <>
+    Database = dm.MySQLDB56
+    Transaction = dm.SaveTransaction
+    SQL.Strings = (
+      ''
+    )
+    InsertSQL.Strings = (
+      'insert into KORYSTUVACHI'
+      '( PIB,  PAROL,  DOSTUP) values'
+      '(:PIB, :PAROL, :DOSTUP)'
+    )
+    UpdateSQL.Strings = (
+      'update KORYSTUVACHI'
+      'set'
+      #9'  PIB    = :PIB,'
+      '    PAROL  = :PAROL,'
+      #9'  DOSTUP = :DOSTUP'
+      'where'
+      '    ID     = :ID'
+    )
+    Params = <>
+    left = 200
+    top = 100
+  end
+  object pUpmHouse: TPopupMenu
+    left = 110
+    top = 180
+    object pmHouse_Add: TMenuItem
+      Action = actAdd
+    end
+    object pmHouse_Upd: TMenuItem
+      Action = actUpd
+    end
+    object pmHouse_Space_1: TMenuItem
+      Caption = '-'
+    end
+    object pmHouse_Print: TMenuItem
+      Action = actPrint
+    end
+  end
+  object pUpmFamily: TPopupMenu
+    left = 110
+    top = 400
+    object pmFamily_Add: TMenuItem
+      Action = actFamily_Add
+    end
+    object pmFamily_Upd: TMenuItem
+      Action = actFamily_Upd
+    end
+    object pmFamily_Del: TMenuItem
+      Action = actFamily_Del
+    end
+    object pmFamily_Line_1: TMenuItem
+      Caption = '-'
+    end
+    object pmFamily_Upd_Person: TMenuItem
+      Action = actFamily_Upd_Person
+    end
+    object pmFamily_Line_2: TMenuItem
+      Caption = '-'
+    end
+    object pmFamily_SetCurrentPerson: TMenuItem
+      Action = actSetCurrentPerson
+    end
+    object pmFamily_Line_3: TMenuItem
+      Caption = '-'
+    end
+    object pmFamily_Temporarily_Absent: TMenuItem
+      AutoCheck = True
+      Caption = 'Тимчасово вибули'
+      OnClick = tmrScrollTimer
+    end
+    object pmFamily_Completely_Absent: TMenuItem
+      AutoCheck = True
+      Caption = 'Остаточно вибули'
+      OnClick = tmrScrollTimer
+    end
+    object pmFamily_Lifeless: TMenuItem
+      AutoCheck = True
+      Caption = 'Неживі'
+      OnClick = tmrScrollTimer
+    end
+    object pmFamily_Line_4: TMenuItem
+      Caption = '-'
+    end
+    object pmFamily_Columns: TMenuItem
+      Caption = 'Колонки'
+      object pmFamily_Columns_Passport: TMenuItem
+        AutoCheck = True
+        Caption = 'Паспортні дані'
+        OnClick = pmGridColumnsVisibleClick
+      end
+    end
+  end
+  object dlgSave: TSaveDialog
+    DefaultExt = '.xls'
+    FileName = 'Result'
+    Filter = 'Електронні таблиці|*.xls'
+    left = 170
+    top = 100
+  end
+  object dsLandOwners: TDataSource
+    DataSet = qLandOwners
+    left = 80
+    top = 210
+  end
+  object qLandOwners: TSQLQuery
+    FieldDefs = <>
+    AfterOpen = qLandOwnersAfterOpen
+    AfterScroll = qQueryAfterScroll
+    Database = dm.MySQLDB56
+    Transaction = dm.MainTransaction
+    SQL.Strings = (
+      'select'
+      '    q.*'
+      'from ('
+      '    select'
+      '        n.*,'
+      '        z.*,'
+      '        concat(trim(n.PRIZVYSHCHE), '' '', trim(n.IMIA), '' '', trim(n.PO_BATKOVI)) FULLNAME,'
+      '        concat(trim(n.SERIIA_PASPORTU), '' '', trim(n.NOMER_PASPORTU))            PASSPORT,'
+      '        x.ID_SELO,'
+      '        x.NOMER,'
+      '        x.ADRESA ADRESA_HOSPODARSTVA,'
+      '        s.ID_OBLAST,'
+      '        s.ID_RAION,'
+      '        s.NAZVA         VILLAGE,'
+      '        o.NAZVA         REGION,'
+      '        o.NAZVA_RODOVYI REGION_R,'
+      '        r.NAZVA         AREA,'
+      '        r.NAZVA_RODOVYI AREA_R'
+      '    from ('
+      '        select'
+      '            z.ID_NASELENNIA,'
+      '            count(z.ID)                LANDS_COUNT,'
+      '            FORMAT(sum(z.PLOSHCHA), 4) LANDS_AREA'
+      '        from ZEMLIA z'
+      '        where (z.ID > 0)'
+      '        group by 1'
+      '    ) z'
+      '        inner join NASELENNIA   n on (z.ID_NASELENNIA    = n.ID)'
+      '        left  join MESHKANTSI   m on (n.ID               = m.ID_NASELENNIA)'
+      '                                 and (m.TYMCHASOVO_VYBUV = 0)'
+      '                                 and (m.OSTATOCHNO_VYBUV = 0)'
+      '        left  join HOSPODARSTVO x on (m.ID_HOSPODARSTVO  = x.ID)'
+      '        left  join SELO         s on (x.ID_SELO          = s.ID)'
+      '        left  join OBLAST       o on (s.ID_OBLAST        = o.ID)'
+      '        left  join RAION        r on (s.ID_RAION         = r.ID)'
+      ') q'
+      'where (q.ID > 0)'
+      '  and (q.ID_SELO = :prm_Selo)'
+      ''
+      'order by q.FULLNAME'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'prm_Selo'
+        ParamType = ptInput
+      end>
+    left = 50
+    top = 210
+  end
+  object pLandOwners: TPopupMenu
+    left = 110
+    top = 210
+    object pmHouse_Add1: TMenuItem
+      Action = actAdd
+    end
+    object pmHouse_Upd1: TMenuItem
+      Action = actUpd
+    end
+    object pmHouse_Space_2: TMenuItem
+      Caption = '-'
+    end
+    object pmHouse_Print1: TMenuItem
+      Action = actPrint
+    end
+  end
+  object frDSLandOwners: TfrDBDataSet
+    DataSet = qLandOwners
+    left = 140
+    top = 210
+  end
+end

@@ -1,0 +1,760 @@
+object frmInhabitant_Edit: TfrmInhabitant_Edit
+  Left = 600
+  Height = 465
+  Top = 150
+  Width = 385
+  BorderStyle = bsDialog
+  BorderWidth = 5
+  Caption = 'Інформація про мешканця'
+  ClientHeight = 465
+  ClientWidth = 385
+  OnClose = FormClose
+  OnCloseQuery = FormCloseQuery
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  LCLVersion = '2.0.2.0'
+  object pnlButtons: TPanel
+    Left = 5
+    Height = 35
+    Top = 425
+    Width = 375
+    Align = alBottom
+    BevelOuter = bvNone
+    ClientHeight = 35
+    ClientWidth = 375
+    TabOrder = 0
+    object btnSave: TBitBtn
+      Left = 0
+      Height = 30
+      Top = 5
+      Width = 150
+      Caption = 'Зберегти'
+      Margin = 1
+      Images = dm.ilButtons
+      ImageIndex = 3
+      ImageWidth = 24
+      OnClick = btnSaveClick
+      Spacing = -1
+      TabOrder = 0
+    end
+    object btnClose: TBitBtn
+      Left = 225
+      Height = 30
+      Top = 5
+      Width = 150
+      Anchors = [akTop, akRight]
+      Cancel = True
+      Caption = 'Скасувати'
+      Margin = 1
+      Images = dm.ilButtons
+      ImageIndex = 6
+      ImageWidth = 24
+      OnClick = btnCloseClick
+      Spacing = -1
+      TabOrder = 1
+    end
+  end
+  object pnlMeshkantsi: TPanel
+    Left = 5
+    Height = 300
+    Top = 5
+    Width = 375
+    Align = alTop
+    BevelOuter = bvNone
+    ClientHeight = 300
+    ClientWidth = 375
+    TabOrder = 1
+    object grpHouse: TGroupBox
+      Left = 0
+      Height = 50
+      Top = 50
+      Width = 375
+      Caption = ' Господарство '
+      ClientHeight = 30
+      ClientWidth = 371
+      TabOrder = 0
+      object edtAddress: TEdit
+        Left = 5
+        Height = 23
+        Top = 0
+        Width = 360
+        Alignment = taCenter
+        Anchors = [akTop, akLeft, akRight]
+        Enabled = False
+        ReadOnly = True
+        TabStop = False
+        TabOrder = 0
+        Text = 'edtAddress'
+      end
+    end
+    object grpPerson: TGroupBox
+      Left = 0
+      Height = 50
+      Top = 100
+      Width = 375
+      Caption = ' Мешканець '
+      ClientHeight = 30
+      ClientWidth = 371
+      TabOrder = 1
+      object edtPerson: TEdit
+        Left = 5
+        Height = 23
+        Top = 0
+        Width = 360
+        Alignment = taCenter
+        Anchors = [akTop, akLeft, akRight]
+        OnUTF8KeyPress = OnFieldUTF8KeyPress
+        ReadOnly = True
+        TabOrder = 0
+        Text = 'edtPerson'
+      end
+    end
+    object grpRegistration: TGroupBox
+      Left = 0
+      Height = 50
+      Top = 150
+      Width = 125
+      Caption = ' Дата реєстрації '
+      ClientHeight = 30
+      ClientWidth = 121
+      TabOrder = 2
+      object edtRegistration: TDateTimePicker
+        Left = 5
+        Height = 23
+        Top = 0
+        Width = 110
+        ShowCheckBox = True
+        CenturyFrom = 1941
+        MaxDate = 2958465
+        MinDate = -53780
+        AutoSize = False
+        TabOrder = 0
+        TrailingSeparator = False
+        TextForNullDate = '< -- -- ---- >'
+        LeadingZeros = True
+        Anchors = [akTop, akLeft, akRight]
+        Kind = dtkDate
+        TimeFormat = tf24
+        TimeDisplay = tdHMS
+        DateMode = dmComboBox
+        Date = 1.7E308
+        Time = 1.7E308
+        UseDefaultSeparators = True
+        AutoButtonSize = True
+        HideDateTimeParts = [dtpHour, dtpMinute, dtpSecond, dtpMiliSec]
+        MonthNames = 'Long'
+        OnChange = OnFieldChange
+        OnCheckBoxChange = edtRegistrationCheckBoxChange
+        OnUTF8KeyPress = OnFieldUTF8KeyPress
+      end
+    end
+    object grpEviction: TGroupBox
+      Left = 0
+      Height = 50
+      Top = 200
+      Width = 125
+      Caption = ' Дата вибуття '
+      ClientHeight = 30
+      ClientWidth = 121
+      TabOrder = 3
+      object edtEviction: TDateTimePicker
+        Left = 5
+        Height = 23
+        Top = 0
+        Width = 110
+        ShowCheckBox = True
+        CenturyFrom = 1941
+        MaxDate = 2958465
+        MinDate = -53780
+        AutoSize = False
+        TabOrder = 0
+        TrailingSeparator = False
+        TextForNullDate = '< -- -- ---- >'
+        LeadingZeros = True
+        Anchors = [akTop, akLeft, akRight]
+        Kind = dtkDate
+        TimeFormat = tf24
+        TimeDisplay = tdHMS
+        DateMode = dmComboBox
+        Date = 1.7E308
+        Time = 1.7E308
+        UseDefaultSeparators = True
+        AutoButtonSize = True
+        HideDateTimeParts = [dtpHour, dtpMinute, dtpSecond, dtpMiliSec]
+        MonthNames = 'Long'
+        OnChange = OnFieldChange
+        OnCheckBoxChange = edtRegistrationCheckBoxChange
+        OnUTF8KeyPress = OnFieldUTF8KeyPress
+      end
+    end
+    object grpLocality: TGroupBox
+      Left = 0
+      Height = 50
+      Top = 0
+      Width = 185
+      Caption = ' Населений пункт '
+      ClientHeight = 30
+      ClientWidth = 181
+      TabOrder = 4
+      object edtVillage: TEdit
+        Left = 5
+        Height = 23
+        Top = 0
+        Width = 170
+        Alignment = taCenter
+        Anchors = [akTop, akLeft, akRight]
+        Enabled = False
+        ReadOnly = True
+        TabStop = False
+        TabOrder = 0
+        Text = 'edtVillage'
+      end
+    end
+    object rgRegistration_Status: TRadioGroup
+      Left = 130
+      Height = 100
+      Top = 150
+      Width = 245
+      AutoFill = True
+      Caption = ' Статус реєстрації '
+      ChildSizing.LeftRightSpacing = 6
+      ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+      ChildSizing.EnlargeVertical = crsHomogenousChildResize
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 1
+      ClientHeight = 80
+      ClientWidth = 241
+      ItemIndex = 0
+      Items.Strings = (
+        'Зареєстрований(на) і проживає'
+        'Зареєстрований(на), але не проживає'
+        'Проживає, але не зареєстрований(на)'
+      )
+      OnClick = OnFieldChange
+      OnUTF8KeyPress = OnFieldUTF8KeyPress
+      TabOrder = 5
+    end
+    object chgEviction: TCheckGroup
+      Left = 0
+      Height = 50
+      Top = 250
+      Width = 375
+      AutoFill = True
+      Caption = ' Інформація про вибуття '
+      ChildSizing.LeftRightSpacing = 10
+      ChildSizing.TopBottomSpacing = 6
+      ChildSizing.HorizontalSpacing = 10
+      ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+      ChildSizing.EnlargeVertical = crsHomogenousChildResize
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 2
+      ClientHeight = 30
+      ClientWidth = 371
+      Columns = 2
+      Items.Strings = (
+        'Тимчасово вибув'
+        'Остаточно вибув'
+      )
+      OnItemClick = chgEvictionItemClick
+      TabOrder = 6
+      Data = {
+        020000000202
+      }
+    end
+  end
+  object pnlDeclarant: TPanel
+    Left = 5
+    Height = 120
+    Top = 305
+    Width = 375
+    Align = alTop
+    BevelOuter = bvNone
+    ClientHeight = 120
+    ClientWidth = 375
+    TabOrder = 2
+    object grpDeclarant: TGroupBox
+      Left = 0
+      Height = 50
+      Top = 0
+      Width = 375
+      Caption = ' Заявник '
+      ClientHeight = 30
+      ClientWidth = 371
+      TabOrder = 0
+      object edtDeclarant: TEdit
+        Left = 8
+        Height = 23
+        Top = 0
+        Width = 360
+        Alignment = taCenter
+        Anchors = [akTop, akLeft, akRight]
+        Enabled = False
+        ReadOnly = True
+        TabStop = False
+        TabOrder = 0
+        Text = 'edtDeclarant'
+      end
+    end
+    object grpRelationship: TGroupBox
+      Left = 0
+      Height = 70
+      Top = 50
+      Width = 375
+      Caption = ' Для заявника мешканець'
+      ClientHeight = 50
+      ClientWidth = 371
+      TabOrder = 1
+      object btnRelationship: TBitBtn
+        Left = 340
+        Height = 23
+        Top = 20
+        Width = 25
+        Glyph.Data = {
+          36030000424D3603000000000000360000002800000010000000100000000100
+          18000000000000000000120B0000120B00000000000000000000008080008080
+          0080800080800080800080800080800080800080800080800080800080800080
+          80008080008080008080008080008080008080008080008080008080008080FF
+          0000000000FF0000008080008080008080008080008080008080008080008080
+          008080008080008080FF0000FF0000000000FFFFFF000000FF00000080800080
+          80008080008080008080008080008080008080008080FF0000008080000000FF
+          FFFF000000FFFFFF000000FF0000008080008080008080008080008080008080
+          008080FF0000000000000000FFFFFFFFFFFFFFFFFF000000FFFFFF000000FF00
+          00008080008080008080008080FF0000FF0000000000FFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFF000000FFFFFF000000FF0000008080008080FF0000008080
+          000000FFFFFF000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000FFFF
+          FF000000FF0000008080000000000000FFFFFFFFFFFFFFFFFF000000FFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFF000000FFFFFF000000FF0000000000FFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFF000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FF000000FFFFFF000000008080000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF00
+          0000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000008080008080008080
+          000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000FFFFFFFFFFFFFFFFFF0000
+          00000000008080008080008080008080008080000000FFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFF000000000000000000008080008080008080008080008080008080
+          008080008080000000FFFFFFFFFFFFFFFFFF0000000080800080800080800080
+          8000808000808000808000808000808000808000808000808000000000000000
+          0000008080008080008080008080008080008080008080008080008080008080
+          0080800080800080800080800080800080800080800080800080800080800080
+          8000808000808000808000808000808000808000808000808000808000808000
+          8080008080008080008080008080008080008080008080008080
+        }
+        OnClick = btnRelationshipClick
+        TabOrder = 1
+      end
+      object lblPerson_Name: TLabel
+        Left = 5
+        Height = 15
+        Top = 0
+        Width = 86
+        Caption = 'lblPerson_Name'
+        ParentColor = False
+      end
+      object lcbRelationship: TDBLookupComboBox
+        Left = 5
+        Height = 23
+        Top = 20
+        Width = 335
+        Anchors = [akTop, akLeft, akRight]
+        AutoComplete = True
+        AutoDropDown = True
+        DropDownCount = 15
+        KeyField = 'ID'
+        ListField = 'NAZVA'
+        ListFieldIndex = 0
+        ListSource = dsRelationship
+        LookupCache = True
+        OnSelect = OnFieldChange
+        OnUTF8KeyPress = OnFieldUTF8KeyPress
+        ScrollListDataset = True
+        Style = csDropDownList
+        TabOrder = 0
+        TabStop = False
+      end
+    end
+  end
+  object qGetPerson: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'id'
+        DataType = ftAutoInc
+        Precision = -1
+      end    
+      item
+        Name = 'id_sela'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'id_holova_hospodarstva'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'nomer'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'adresa'
+        DataType = ftString
+        Precision = -1
+        Size = 600
+      end>
+    Database = dm.MySQLDB56
+    Transaction = dm.MainTransaction
+    SQL.Strings = (
+      'select'
+      '    ID,'
+      '    concat(PRIZVYSHCHE, '' '', IMIA, '' '', PO_BATKOVI) PIB'
+      'from NASELENNIA'
+      'where (1 = 1)'
+      '  and (ID = :ID)'
+      'order by ID'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'ID'
+        ParamType = ptInput
+      end>
+    left = 285
+    top = 5
+  end
+  object qGetHouse: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'id'
+        DataType = ftAutoInc
+        Precision = -1
+      end    
+      item
+        Name = 'id_sela'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'id_holova_hospodarstva'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'nomer'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'adresa'
+        DataType = ftString
+        Precision = -1
+        Size = 600
+      end>
+    Database = dm.MySQLDB56
+    Transaction = dm.MainTransaction
+    SQL.Strings = (
+      'select'
+      '    h.ID,'
+      '    h.ID_SELO,'
+      '    h.ID_HOLOVA_HOSPODARSTVA,'
+      '    h.NOMER,'
+      '    h.ADRESA,'
+      '    s.NAZVA,'
+      '    concat(n.PRIZVYSHCHE, '' '', n.IMIA, '' '', n.PO_BATKOVI) PIB'
+      'from HOSPODARSTVO h'
+      '    inner join SELO       s on (h.ID_SELO                = s.ID)'
+      '    inner join NASELENNIA n on (h.ID_HOLOVA_HOSPODARSTVA = n.ID)'
+      'where (1 = 1)'
+      '  and (h.ID = :ID)'
+      'order by h.ID'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'ID'
+        ParamType = ptInput
+      end>
+    left = 315
+    top = 5
+  end
+  object qGetData: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'id'
+        DataType = ftAutoInc
+        Precision = -1
+      end    
+      item
+        Name = 'id_hospodarstvo'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'id_naselennia'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'id_sporidnenist'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'data_reiestratsii'
+        DataType = ftDate
+        Precision = -1
+      end    
+      item
+        Name = 'data_vybuttia'
+        DataType = ftDate
+        Precision = -1
+      end    
+      item
+        Name = 'tymchasovо_vybuv'
+        DataType = ftSmallint
+        Precision = -1
+      end    
+      item
+        Name = 'ostatochno_vybuv'
+        DataType = ftSmallint
+        Precision = -1
+      end>
+    Database = dm.MySQLDB56
+    Transaction = dm.MainTransaction
+    SQL.Strings = (
+      'select'
+      '    *'
+      'from MESHKANTSI'
+      'where (1 = 1)'
+      '  and (ID = :ID)'
+      'order by ID'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'ID'
+        ParamType = ptInput
+      end>
+    left = 255
+    top = 5
+  end
+  object sqlInhabitant: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'id'
+        DataType = ftAutoInc
+        Precision = -1
+      end    
+      item
+        Name = 'pib'
+        DataType = ftString
+        Precision = -1
+        Size = 600
+      end    
+      item
+        Name = 'parol'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'dostup'
+        DataType = ftSmallint
+        Precision = -1
+      end>
+    Database = dm.MySQLDB56
+    Transaction = dm.SaveTransaction
+    SQL.Strings = (
+      ''
+    )
+    InsertSQL.Strings = (
+      'insert into MESHKANTSI'
+      '( ID,  ID_HOSPODARSTVO,  ID_NASELENNIA,  DATA_REIESTRATSII,  DATA_VYBUTTIA,  TYMCHASOVO_VYBUV,  OSTATOCHNO_VYBUV,  STATUS_PROZHYVANNIA) values'
+      '(:ID, :ID_Hospodarstvo, :ID_Naselennia, :Data_Reiestratsii, :Data_Vybuttia, :Tymchasovo_Vybuv, :Ostatochno_Vybuv, :Status_Prozhyvannia)'
+    )
+    UpdateSQL.Strings = (
+      'update MESHKANTSI'
+      'set'
+      '    ID_HOSPODARSTVO      = :ID_Hospodarstvo,'
+      #9'  ID_NASELENNIA        = :ID_Naselennia,'
+      #9'  DATA_REIESTRATSII    = :Data_Reiestratsii,'
+      #9'  DATA_VYBUTTIA        = :Data_Vybuttia,'
+      #9'  TYMCHASOVO_VYBUV     = :Tymchasovo_Vybuv,'
+      #9'  OSTATOCHNO_VYBUV     = :Ostatochno_Vybuv,'
+      '    STATUS_PROZHYVANNIA  = :Status_Prozhyvannia'
+      'where'
+      '    ID = :ID'
+    )
+    Params = <>
+    left = 225
+    top = 5
+  end
+  object ActionList: TActionList
+    left = 195
+    top = 5
+    object actReference: TAction
+      Caption = 'Виклик довідника'
+      ShortCut = 120
+    end
+  end
+  object dsRelationship: TDataSource
+    DataSet = qRelationship
+    left = 300
+    top = 390
+  end
+  object qRelationship: TSQLQuery
+    FieldDefs = <>
+    Database = dm.MySQLDB56
+    Transaction = dm.MainTransaction
+    SQL.Strings = (
+      'select'
+      '    ID ORDER_NUM,'
+      '    ID,'
+      '    NAZVA'
+      'from TYP_SPORIDNENOSTI'
+      'where (ID = 0)'
+      ''
+      'union'
+      ''
+      'select'
+      '    COALESCE(q.ORDER_NUM, 1) ORDER_NUM,'
+      '    t.ID,'
+      '    t.NAZVA'
+      'from ('
+      '    select'
+      '        0 ORDER_NUM,'
+      '        t.ID,'
+      '        t.NAZVA,'
+      '        count(t.ID) CNT'
+      '    from TYP_SPORIDNENOSTI t'
+      '        left join SPORIDNENIST s on (t.ID = s.ID_TYP_SPORIDNENOSTI)'
+      '    where (t.ID     > 0)'
+      '      and (t.DOSTUP = 1)'
+      ''
+      '    group by 1, 2'
+      '    order by 4 desc, 3'
+      '    limit 15'
+      ') q'
+      '    right join TYP_SPORIDNENOSTI t on (q.ID = t.ID)'
+      'where (t.ID     > 0)'
+      '  and (t.DOSTUP = 1)'
+      ''
+      'order by 1, 3'
+    )
+    Params = <>
+    left = 270
+    top = 390
+  end
+  object qGetRelationship: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'id'
+        DataType = ftAutoInc
+        Precision = -1
+      end    
+      item
+        Name = 'id_sela'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'id_holova_hospodarstva'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'nomer'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'adresa'
+        DataType = ftString
+        Precision = -1
+        Size = 600
+      end>
+    Database = dm.MySQLDB56
+    Transaction = dm.MainTransaction
+    SQL.Strings = (
+      'select'
+      '    s.*'
+      'from SPORIDNENIST s'
+      'where (1 = 1)'
+      '  and (s.ID_HOSPODARSTVO    = :ID_Hospodarstvo)'
+      '  and (s.ID_NASELENNIA_KHTO = :ID_Naselennia_Khto)'
+      '  and (s.ID_NASELENNIA_KOMU = :ID_Naselennia_Komu)'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'ID_Hospodarstvo'
+        ParamType = ptInput
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'ID_Naselennia_Khto'
+        ParamType = ptInput
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'ID_Naselennia_Komu'
+        ParamType = ptInput
+      end>
+    left = 345
+    top = 5
+  end
+  object sqlRelationship: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'id'
+        DataType = ftAutoInc
+        Precision = -1
+      end    
+      item
+        Name = 'pib'
+        DataType = ftString
+        Precision = -1
+        Size = 600
+      end    
+      item
+        Name = 'parol'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'dostup'
+        DataType = ftSmallint
+        Precision = -1
+      end>
+    Database = dm.MySQLDB56
+    Transaction = dm.SaveTransaction
+    SQL.Strings = (
+      ''
+    )
+    InsertSQL.Strings = (
+      'insert into SPORIDNENIST'
+      '( ID,  ID_HOSPODARSTVO,  ID_NASELENNIA_KHTO,  ID_NASELENNIA_KOMU,  ID_TYP_SPORIDNENOSTI) values'
+      '(:ID, :ID_Hospodarstvo, :ID_Naselennia_Khto, :ID_Naselennia_Komu, :ID_Typ_Sporidnenosti)'
+    )
+    UpdateSQL.Strings = (
+      'update SPORIDNENIST'
+      'set'
+      '    ID_HOSPODARSTVO      = :ID_Hospodarstvo,'
+      '    ID_NASELENNIA_KHTO   = :ID_Naselennia_Khto,'
+      '    ID_NASELENNIA_KOMU   = :ID_Naselennia_Komu,'
+      '    ID_TYP_SPORIDNENOSTI = :ID_Typ_Sporidnenosti'
+      'where'
+      '    ID = :ID'
+    )
+    DeleteSQL.Strings = (
+      'delete from SPORIDNENIST'
+      'where'
+      '    ID = :ID'
+    )
+    Params = <>
+    left = 225
+    top = 35
+  end
+end

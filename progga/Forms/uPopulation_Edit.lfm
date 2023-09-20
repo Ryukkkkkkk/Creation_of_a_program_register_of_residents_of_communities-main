@@ -1,0 +1,1101 @@
+object frmPopulation_Edit: TfrmPopulation_Edit
+  Left = 400
+  Height = 445
+  Top = 125
+  Width = 635
+  BorderStyle = bsDialog
+  BorderWidth = 5
+  Caption = 'Нова особа'
+  ClientHeight = 445
+  ClientWidth = 635
+  Constraints.MinHeight = 445
+  Constraints.MinWidth = 635
+  OnClose = FormClose
+  OnCloseQuery = FormCloseQuery
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  LCLVersion = '2.0.0.4'
+  object pnlInfo: TPanel
+    Left = 5
+    Height = 300
+    Top = 5
+    Width = 625
+    Align = alTop
+    BevelOuter = bvNone
+    ClientHeight = 300
+    ClientWidth = 625
+    TabOrder = 0
+    object pnlInfo_Left: TPanel
+      Left = 0
+      Height = 300
+      Top = 0
+      Width = 240
+      Align = alLeft
+      BevelOuter = bvNone
+      ClientHeight = 300
+      ClientWidth = 240
+      TabOrder = 0
+      object grpLastName: TGroupBox
+        Left = 0
+        Height = 50
+        Top = 0
+        Width = 240
+        Align = alTop
+        Caption = ' Прізвище '
+        ClientHeight = 30
+        ClientWidth = 236
+        TabOrder = 0
+        object edtLastName: TEdit
+          Left = 5
+          Height = 23
+          Top = 0
+          Width = 225
+          Anchors = [akTop, akLeft, akRight]
+          OnChange = OnFieldChange
+          OnUTF8KeyPress = OnLettersUTF8KeyPress
+          TabOrder = 0
+        end
+      end
+      object grpFirstName: TGroupBox
+        Left = 0
+        Height = 50
+        Top = 50
+        Width = 240
+        Align = alTop
+        Caption = ' Ім''я '
+        ClientHeight = 30
+        ClientWidth = 236
+        TabOrder = 1
+        object edtFirstName: TEdit
+          Left = 5
+          Height = 23
+          Top = 0
+          Width = 225
+          Anchors = [akTop, akLeft, akRight]
+          OnChange = OnFieldChange
+          OnUTF8KeyPress = OnLettersUTF8KeyPress
+          TabOrder = 0
+        end
+      end
+      object grpMiddleName: TGroupBox
+        Left = 0
+        Height = 50
+        Top = 100
+        Width = 240
+        Align = alTop
+        Caption = ' По батькові '
+        ClientHeight = 30
+        ClientWidth = 236
+        TabOrder = 2
+        object edtMiddleName: TEdit
+          Left = 5
+          Height = 23
+          Top = 0
+          Width = 225
+          Anchors = [akTop, akLeft, akRight]
+          OnChange = OnFieldChange
+          OnUTF8KeyPress = OnLettersUTF8KeyPress
+          TabOrder = 0
+        end
+      end
+      object grpPhone: TGroupBox
+        Left = 0
+        Height = 50
+        Top = 250
+        Width = 240
+        Align = alTop
+        Caption = ' Телефон '
+        ClientHeight = 30
+        ClientWidth = 236
+        TabOrder = 3
+        object edtPhone: TEdit
+          Left = 5
+          Height = 23
+          Top = 0
+          Width = 225
+          Alignment = taCenter
+          Anchors = [akTop, akLeft, akRight]
+          OnChange = OnFieldChange
+          OnUTF8KeyPress = OnPhoneUTF8KeyPress
+          TabOrder = 0
+        end
+      end
+      object pnlDatesAndSex: TPanel
+        Left = 0
+        Height = 100
+        Top = 150
+        Width = 240
+        Align = alTop
+        BevelOuter = bvNone
+        ClientHeight = 100
+        ClientWidth = 240
+        TabOrder = 4
+        object pnlDates: TPanel
+          Left = 0
+          Height = 100
+          Top = 0
+          Width = 145
+          Align = alLeft
+          BevelOuter = bvNone
+          ClientHeight = 100
+          ClientWidth = 145
+          TabOrder = 0
+          object grpBirthDay: TGroupBox
+            Left = 0
+            Height = 50
+            Top = 0
+            Width = 145
+            Align = alTop
+            Caption = ' Дата народження '
+            ClientHeight = 30
+            ClientWidth = 141
+            TabOrder = 0
+            object edtBirthDay: TDateTimePicker
+              Left = 5
+              Height = 23
+              Top = 0
+              Width = 130
+              CenturyFrom = 1941
+              MaxDate = 2958465
+              MinDate = -53780
+              AutoSize = False
+              TabOrder = 0
+              TrailingSeparator = False
+              TextForNullDate = '< -- -- ---- >'
+              LeadingZeros = True
+              Anchors = [akTop, akLeft, akRight]
+              Kind = dtkDate
+              TimeFormat = tf24
+              TimeDisplay = tdHMS
+              DateMode = dmComboBox
+              Date = 1.7E308
+              Time = 1.7E308
+              UseDefaultSeparators = True
+              AutoButtonSize = True
+              HideDateTimeParts = [dtpHour, dtpMinute, dtpSecond, dtpMiliSec]
+              MonthNames = 'Long'
+              OnChange = OnFieldChange
+              OnUTF8KeyPress = OnFieldUTF8KeyPress
+            end
+          end
+          object grpDeathDay: TGroupBox
+            Left = 0
+            Height = 50
+            Top = 50
+            Width = 145
+            Align = alTop
+            Caption = ' Дата смерті '
+            ClientHeight = 30
+            ClientWidth = 141
+            TabOrder = 1
+            object edtDeathDay: TDateTimePicker
+              Left = 5
+              Height = 23
+              Top = 0
+              Width = 130
+              ShowCheckBox = True
+              Checked = False
+              CenturyFrom = 1941
+              MaxDate = 2958465
+              MinDate = -53780
+              AutoSize = False
+              TabOrder = 0
+              TrailingSeparator = False
+              TextForNullDate = '< -- -- ---- >'
+              LeadingZeros = True
+              Anchors = [akTop, akLeft, akRight]
+              Kind = dtkDate
+              TimeFormat = tf24
+              TimeDisplay = tdHMS
+              DateMode = dmComboBox
+              Date = 1.7E308
+              Time = 1.7E308
+              UseDefaultSeparators = True
+              AutoButtonSize = True
+              HideDateTimeParts = [dtpHour, dtpMinute, dtpSecond, dtpMiliSec]
+              MonthNames = 'Long'
+              OnChange = OnFieldChange
+              OnCheckBoxChange = edtDeathDayCheckBoxChange
+              OnUTF8KeyPress = OnFieldUTF8KeyPress
+            end
+          end
+        end
+        object rgSex: TRadioGroup
+          Left = 150
+          Height = 100
+          Top = 0
+          Width = 90
+          Align = alRight
+          AutoFill = True
+          Caption = ' Стать '
+          ChildSizing.LeftRightSpacing = 6
+          ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+          ChildSizing.EnlargeVertical = crsHomogenousChildResize
+          ChildSizing.ShrinkHorizontal = crsScaleChilds
+          ChildSizing.ShrinkVertical = crsScaleChilds
+          ChildSizing.Layout = cclLeftToRightThenTopToBottom
+          ChildSizing.ControlsPerLine = 1
+          ClientHeight = 80
+          ClientWidth = 86
+          ItemIndex = 0
+          Items.Strings = (
+            'Чоловіча'
+            'Жіноча'
+          )
+          OnClick = OnFieldChange
+          OnUTF8KeyPress = OnFieldUTF8KeyPress
+          TabOrder = 1
+        end
+      end
+    end
+    object pnlBorder: TPanel
+      Left = 240
+      Height = 300
+      Top = 0
+      Width = 5
+      Align = alLeft
+      BevelOuter = bvNone
+      TabOrder = 1
+    end
+    object pcInfo: TPageControl
+      Left = 245
+      Height = 300
+      Top = 0
+      Width = 380
+      ActivePage = tsMain_Data
+      Align = alClient
+      TabHeight = 20
+      TabIndex = 0
+      TabOrder = 2
+      object tsMain_Data: TTabSheet
+        Caption = 'Основні дані'
+        ChildSizing.LeftRightSpacing = 1
+        ChildSizing.TopBottomSpacing = 1
+        ClientHeight = 272
+        ClientWidth = 372
+        object grpPIB_Rodovyi: TGroupBox
+          Left = 1
+          Height = 50
+          Top = 1
+          Width = 370
+          Align = alTop
+          Caption = ' Прізвище Ім''я По батькові (у родовому відмінку) '
+          ClientHeight = 30
+          ClientWidth = 366
+          TabOrder = 0
+          object edtPIB_Rodovyi: TEdit
+            Left = 5
+            Height = 23
+            Top = 0
+            Width = 355
+            Anchors = [akTop, akLeft, akRight]
+            OnChange = OnFieldChange
+            OnEnter = OnPIBEnter
+            OnUTF8KeyPress = OnLettersUTF8KeyPress
+            TabOrder = 0
+          end
+        end
+        object grpPIB_Davalnyi: TGroupBox
+          Left = 1
+          Height = 50
+          Top = 51
+          Width = 370
+          Align = alTop
+          Caption = ' Прізвище Ім''я По батькові (у давальному відмінку) '
+          ClientHeight = 30
+          ClientWidth = 366
+          TabOrder = 1
+          object edtPIB_Davalnyi: TEdit
+            Left = 5
+            Height = 23
+            Top = 0
+            Width = 355
+            Anchors = [akTop, akLeft, akRight]
+            OnChange = OnFieldChange
+            OnEnter = OnPIBEnter
+            OnUTF8KeyPress = OnLettersUTF8KeyPress
+            TabOrder = 0
+          end
+        end
+        object pnlPassport: TPanel
+          Left = 1
+          Height = 50
+          Top = 101
+          Width = 370
+          Align = alTop
+          BevelOuter = bvNone
+          ClientHeight = 50
+          ClientWidth = 370
+          TabOrder = 2
+          object grpPassportSeriesAndNumber: TGroupBox
+            Left = 0
+            Height = 50
+            Top = 0
+            Width = 220
+            Caption = ' Серія та номер паспорта/свідоцтва '
+            ClientHeight = 30
+            ClientWidth = 216
+            TabOrder = 0
+            object edtPassportSeries: TEdit
+              Left = 5
+              Height = 23
+              Hint = ' Серія паспорта/свідоцтва '
+              Top = 0
+              Width = 70
+              Alignment = taCenter
+              Anchors = [akTop, akLeft, akRight]
+              OnChange = OnFieldChange
+              OnUTF8KeyPress = OnFieldUTF8KeyPress
+              ParentShowHint = False
+              ShowHint = True
+              TabOrder = 0
+            end
+            object edtPassportNumber: TEdit
+              Left = 75
+              Height = 23
+              Hint = 'Номер паспорта/свідоцтва '
+              Top = 0
+              Width = 135
+              Alignment = taCenter
+              Anchors = [akTop, akLeft, akRight]
+              OnChange = OnFieldChange
+              OnUTF8KeyPress = OnFieldUTF8KeyPress
+              ParentShowHint = False
+              ShowHint = True
+              TabOrder = 1
+            end
+          end
+          object grpPassportDate: TGroupBox
+            Left = 225
+            Height = 50
+            Top = 0
+            Width = 145
+            Anchors = [akTop, akRight]
+            Caption = ' Дата видачі паспорта '
+            ClientHeight = 30
+            ClientWidth = 141
+            TabOrder = 1
+            object edtPassportDate: TDateTimePicker
+              Left = 5
+              Height = 23
+              Top = 0
+              Width = 130
+              CenturyFrom = 1941
+              MaxDate = 2958465
+              MinDate = -53780
+              AutoSize = False
+              TabOrder = 0
+              TrailingSeparator = False
+              TextForNullDate = '< -- -- ---- >'
+              LeadingZeros = True
+              Anchors = [akTop, akLeft, akRight]
+              Kind = dtkDate
+              TimeFormat = tf24
+              TimeDisplay = tdHMS
+              DateMode = dmComboBox
+              Date = 1.7E308
+              Time = 1.7E308
+              UseDefaultSeparators = True
+              Cascade = True
+              AutoButtonSize = True
+              HideDateTimeParts = [dtpHour, dtpMinute, dtpSecond, dtpMiliSec]
+              MonthNames = 'Long'
+              OnChange = OnFieldChange
+              OnUTF8KeyPress = OnFieldUTF8KeyPress
+            end
+          end
+        end
+        object grpPassportAgency: TGroupBox
+          Left = 1
+          Height = 50
+          Top = 151
+          Width = 370
+          Align = alTop
+          Caption = ' Назва органу, я кий видав документ '
+          ClientHeight = 30
+          ClientWidth = 366
+          TabOrder = 3
+          object edtPassportAgency: TEdit
+            Left = 5
+            Height = 23
+            Top = 0
+            Width = 355
+            Anchors = [akTop, akLeft, akRight]
+            OnChange = OnFieldChange
+            OnUTF8KeyPress = OnFieldUTF8KeyPress
+            TabOrder = 0
+          end
+        end
+        object pnlIPNAndYeDDR: TPanel
+          Left = 1
+          Height = 55
+          Top = 201
+          Width = 370
+          Align = alTop
+          BevelOuter = bvNone
+          ClientHeight = 55
+          ClientWidth = 370
+          TabOrder = 4
+          object grpIPN: TGroupBox
+            Left = 0
+            Height = 55
+            Top = 0
+            Width = 220
+            Align = alLeft
+            Caption = ' Індивідуальний податковий номер '
+            ClientHeight = 35
+            ClientWidth = 216
+            TabOrder = 0
+            object edtIPN: TEdit
+              Left = 5
+              Height = 23
+              Top = 0
+              Width = 205
+              Alignment = taCenter
+              Anchors = [akTop, akLeft, akRight]
+              OnChange = OnFieldChange
+              OnUTF8KeyPress = OnNumbersAndLettersUTF8KeyPress
+              TabOrder = 0
+            end
+          end
+          object grpYeDDR: TGroupBox
+            Left = 225
+            Height = 55
+            Top = 0
+            Width = 145
+            Align = alRight
+            Anchors = [akTop, akRight]
+            Caption = ' Номер у ЄДДР '
+            ClientHeight = 37
+            ClientWidth = 141
+            TabOrder = 1
+            object medtYeDDR: TMaskEdit
+              Left = 5
+              Height = 21
+              Top = 0
+              Width = 128
+              CharCase = ecNormal
+              MaxLength = 14
+              TabOrder = 0
+              OnChange = OnFieldChange
+              OnUTF8KeyPress = OnNumbersUTF8KeyPress
+              EditMask = '00000000-00000;1;_'
+              Text = '        -     '
+              SpaceChar = '_'
+            end
+          end
+        end
+      end
+      object tsOther_Data: TTabSheet
+        Caption = 'Додаткові дані'
+        ChildSizing.LeftRightSpacing = 1
+        ChildSizing.TopBottomSpacing = 1
+        ClientHeight = 272
+        ClientWidth = 372
+        object grpCitizenship: TGroupBox
+          Left = 1
+          Height = 50
+          Top = 51
+          Width = 370
+          Align = alTop
+          Caption = ' Громадянство '
+          ClientHeight = 30
+          ClientWidth = 366
+          TabOrder = 0
+          object lcbCitizenship: TDBLookupComboBox
+            Left = 5
+            Height = 23
+            Top = 0
+            Width = 355
+            Anchors = [akTop, akLeft, akRight]
+            AutoComplete = True
+            AutoDropDown = True
+            KeyField = 'ID'
+            ListField = 'NAZVA'
+            ListFieldIndex = 0
+            ListSource = dsCitizenship
+            LookupCache = True
+            OnSelect = OnFieldChange
+            OnUTF8KeyPress = OnFieldUTF8KeyPress
+            ScrollListDataset = True
+            Sorted = True
+            Style = csDropDownList
+            TabOrder = 0
+          end
+        end
+        object grpBirthPlace: TGroupBox
+          Left = 1
+          Height = 50
+          Top = 1
+          Width = 370
+          Align = alTop
+          Caption = ' Місце народження '
+          ClientHeight = 30
+          ClientWidth = 366
+          TabOrder = 1
+          object edtBirthPlace: TEdit
+            Left = 5
+            Height = 23
+            Top = 0
+            Width = 355
+            Anchors = [akTop, akLeft, akRight]
+            OnChange = OnFieldChange
+            OnUTF8KeyPress = OnFieldUTF8KeyPress
+            TabOrder = 0
+          end
+        end
+      end
+    end
+  end
+  object pnlButtons: TPanel
+    Left = 5
+    Height = 35
+    Top = 405
+    Width = 625
+    Align = alBottom
+    BevelOuter = bvNone
+    ClientHeight = 35
+    ClientWidth = 625
+    TabOrder = 1
+    object btnSave: TBitBtn
+      Left = 0
+      Height = 30
+      Top = 5
+      Width = 125
+      Caption = 'Зберегти'
+      Margin = 1
+      Images = dm.ilButtons
+      ImageIndex = 3
+      ImageWidth = 24
+      OnClick = btnSaveClick
+      Spacing = -1
+      TabOrder = 0
+    end
+    object btnClose: TBitBtn
+      Left = 500
+      Height = 30
+      Top = 5
+      Width = 125
+      Anchors = [akTop, akRight]
+      Cancel = True
+      Caption = 'Скасувати'
+      Glyph.Data = {
+        DA060000424DDC060000000000001A0000000C00000018001800010018003C1A
+        E22E0DE1130DDD100DDC110DDC110DDC110DDC110DDC110DDC110DDC110DDC11
+        0DDC110DDC110DDC110DDC110DDC110DDC110DDC110DDC110DDC110DDC0F0DDC
+        280DE03F1AE32000DE2703DF5539E65B40E7583DE7583DE7583DE7583DE7583D
+        E7583DE7583DE7583DE7583DE7583DE7583DE7583DE7583DE7583DE7583DE758
+        3DE7593DE75D42E73210E11C00DE1E0DDF2E0CE0FFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF5E43E80E0DDC200DDF2D0BE0FBFAFFF8
+        F8FEBDBAF5C3BBF6C5BBF6C5BBF6C5BBF6C5BBF6C5BBF6C5BBF6C5BBF6C5BBF6
+        C5BBF6C5BBF6C5BBF6C5BBF6C3BBF6BCB9F5F3F1FDFFFFFF593EE7100DDC200D
+        DF2D0BE0FFFFFFCFC8F80000D70000D90000D50000D60B00DB0C00DB0A00DB0A
+        00DB0A00DB0A00DB0B00DB0D00DC0000D70000D50000D70000D8BEB3F5FFFFFF
+        583DE7110DDC200DDF2D0BE0FFFFFFD3CCF90100D83718E18E7BEE6349E80000
+        D91B00DE2200DF2000DE2000DE2200DF1F00DE0000D8563BE68E7BEE4E34E501
+        00D8C4BAF6FFFFFF583DE7110DDC200DDF2D0BE0FFFFFFD4CDF90000D66F50EA
+        FFFFFFFFFFFF6F60EA0000D71F00DE2600DF2500DF2200DF0000D8594AE7FFFF
+        FFFFFFFFAF9DF40000D3C5BBF6FFFFFF583DE7110DDC200DDF2D0BE0FFFFFFD4
+        CDF90200D93320E1FCF6FFFFFFFFFFFFFF725EEA0000D72000DF2500DF0000D8
+        5A47E7FFFFFFFFFFFFFFFFFF533FE60000D7C5BBF6FFFFFF583DE7110DDC200D
+        DF2D0BE0FFFFFFD4CDF90C00DC0000DA3D2BE3FBF5FEFFFFFFFFFFFF725FEA00
+        00D70000D75A47E7FFFFFFFFFFFFFFFFFF5A47E70000D90900DCC5BBF6FFFFFF
+        583DE7110DDC200DDF2D0BE0FFFFFFD4CDF90B00DB2300DE0000D83D2AE2FCF6
+        FFFFFFFFFFFFFF5A44E74433E3FFFFFFFFFFFFFFFFFF5B4AE70000D81F00DE0B
+        00DBC5BBF6FFFFFF583DE7110DDC200DDF2D0BE0FFFFFFD4CDF90B00DB2100DE
+        2700DF0000D83E2DE3F9F5FEFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF5C47E70000
+        D82300DF2100DE0A00DBC5BBF6FFFFFF583DE7110DDC200DDF2D0BE0FFFFFFD4
+        CDF90B00DB2000DE2500DF2800E00000D82B10E0E7E3FBFFFFFFFFFFFFF9F9FE
+        482AE50000D72500DF2500DF2000DE0A00DBC5BBF6FFFFFF583DE7110DDC200D
+        DF2D0BE0FFFFFFD4CDF90B00DB2000DE2500DF2300DF0000D84730E4EBE8FCFF
+        FFFFFFFFFFFAF9FE5E43E80000D72100DF2600DF2000DE0A00DBC5BBF6FFFFFF
+        583DE7110DDC200DDF2D0BE0FFFFFFD4CDF90B00DB2100DE2300DF0000D85B47
+        E7FFFFFFFFFFFFFAF7FEF6EDFEFFFFFFFFFFFF735EEA0000D71F00DE2200DE0A
+        00DBC5BBF6FFFFFF583DE7110DDC200DDF2D0BE0FFFFFFD4CDF90C00DB1E00DE
+        0000D85A47E7FFFFFFFFFFFFFFFFFF422AE32618DFFBF5FEFFFFFFFFFFFF725F
+        EA0000D81B00DD0B00DBC5BBF6FFFFFF583DE7110DDC200DDF2D0BE0FFFFFFD4
+        CDF90A00DB0200DA5B4AE7FFFFFFFFFFFFFFFFFF5B4AE70000D80000D83D2AE2
+        FCF6FFFFFFFFFFFFFF7260EB0000D90800DBC5BBF6FFFFFF583DE7110DDC200D
+        DF2D0BE0FFFFFFD4CDF90000D83F25E2FFFFFFFFFFFFFFFFFF5A47E70000D823
+        00DF2800E00000D83D2DE3FCF6FFFFFFFFFFFFFF6049E80000D7C5BBF6FFFFFF
+        583DE7110DDC200DDF2D0BE0FFFFFFD4CDF90000D6684BE8FFFFFFFFFFFF5B47
+        E80000D82300DF2500DF2500DF2700DF0000D83F2BE3F3F2FDFFFFFFA493F200
+        00D4C5BBF6FFFFFF583DE7110DDC200DDF2D0BE0FFFFFFD3CCF90400D92A0BE0
+        5A3FE74425E40000DA1F00DE2100DF2000DE2000DE2100DF2300DF0000D93717
+        E25A3FE73719E10300D9C4BAF6FFFFFF583DE7110DDC200DDF2D0BE0FFFFFFCF
+        C8F80000D80000D90000D60000D80D00DC0D00DC0B00DB0B00DB0B00DB0B00DB
+        0C00DB0F00DC0000D80000D60000D80000D8BEB3F5FFFFFF583DE7110DDC1F0D
+        DF2E0CE0FFFFFFFFFFFFCDCCF8D3CDF8D4CDF9D4CDF9D4CDF9D4CDF9D4CDF9D4
+        CDF9D4CDF9D4CDF9D4CDF9D4CDF9D4CDF9D4CDF9D3CDF8CDCCF8FFFFFFFFFFFF
+        5C42E80E0DDC210DDF2D0BE0E2DCFBF9F8FEFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFAF9FFF3F1FD553AE7130DDC2300DF2501DF2D0AE02E0CE02D0BE02D0BE0
+        2D0BE02D0BE02D0BE02D0BE02D0BE02D0BE02D0BE02D0BE02D0BE02D0BE02D0B
+        E02D0BE02D0BE02D0BE02E0BE02F0DE12703DF2300DF3B1AE22E0DE1210DDF1F
+        0DDF200DDF200DDF200DDF200DDF200DDF200DDF200DDF200DDF200DDF200DDF
+        200DDF200DDF200DDF200DDF200DDF200DDF200DDF1F0DDF2B0DE03C1AE2
+      }
+      Margin = 1
+      Images = dm.ilButtons
+      ImageIndex = 6
+      ImageWidth = 24
+      OnClick = btnCloseClick
+      Spacing = -1
+      TabOrder = 1
+      TabStop = False
+    end
+  end
+  object grpAddress: TGroupBox
+    Left = 5
+    Height = 50
+    Top = 305
+    Width = 625
+    Align = alTop
+    Caption = ' Адреса проживання '
+    ClientHeight = 30
+    ClientWidth = 621
+    TabOrder = 2
+    object edtAddress: TEdit
+      Left = 5
+      Height = 23
+      Top = 0
+      Width = 585
+      Alignment = taCenter
+      Anchors = [akTop, akLeft, akRight]
+      Color = cl3DLight
+      OnChange = OnFieldChange
+      ReadOnly = True
+      TabStop = False
+      TabOrder = 1
+    end
+    object btnAddress: TBitBtn
+      Left = 590
+      Height = 23
+      Top = 0
+      Width = 25
+      Anchors = [akTop, akRight]
+      Glyph.Data = {
+        0A040000424D0C040000000000001A0000000C0000001200120001001800FFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFDFBFAFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF6C10FFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFAF9F8BFC0BE767F885F65787B8694
+        F0F4F5FFFFFFFFFFFFFFFFFF6C10FFFFFFFFFFFFFFFFFFF2F2F1F3F2F2FFFFFF
+        FFFFFFFFFFFFFFFFFFCCCECC232B384C3029987B5261422F5B5B65F8FEFFFFFF
+        FFFFFFFF6C10FFFFFFF0EFEFAAAAA982888C868B8FBFBFBEFFFFFFFFFFFFEAEA
+        EA808691482E1BF1CB5CF9E45DFDCD4790622EB2B2C0FFFFFFFFFFFF6C10FFFF
+        FF92999D2E33456353585C5058666C78DFE1E1B2B1B1919394504953C49C60FF
+        FFC5E8D691FFFFBBAA8F65484046FFFFFFFFFFFF6C10D8DDE2272228946A33EA
+        C364DEAD4A9978567B7F893B3C3C95969655575B5B4130D0C3A3DCD6CDB1ADA9
+        2F2F340000007D7D7DFEFEFE6C10727481815D2FFFFF84E3D15DFFF98CD7AF5A
+        61595CA0A3A9BABABAEBEDED41474E0300003D3C3D50515746484B1717152222
+        22AFAFAF6C10908B92AA895BFFFFD8FFF6D1FFF6C46B5630141720EBEBECFFFF
+        FFF2F2F2919292000000383A3B6D6D6D5C5B5A2E2E2E666666A6A6A66C10F0F2
+        F56757528F7351B9A98A7B694D3D3D42121619979796A5A5A5959595A0A0A02C
+        2C2B2A2A296060606666662727277B7B7AF0F0F06C10FFFFFFC6CCD000000015
+        1214565B656B6D702625244D4D4D9F9F9F9D9D9D9292923A3A3A1A1A1A545454
+        737374272727979797FFFFFF6C10FFFFFFFFFFFF8A8C8E0A0B0C5D5D5D6E6D6D
+        4040402929292F2F2F6B6B6B6D6D6D0808081818173F3F3E5E5E5F2B2B2B5B5B
+        5BFFFFFF6C10FFFFFFFFFFFFFFFFFF5050502D2D2D7171715D5D5D1A1A1A0C0C
+        0C3434342F2F2F3B3B3B3C3C3C3A3A394A4A49343434414141FEFEFE6C10FFFF
+        FFFFFFFFFFFFFFA4A4A41515155050504949483B3B3B4949494F4F4F46464632
+        32324242424A4A4A2A2A2A040404414141FFFFFF6C10FFFFFFFFFFFFFFFFFFEE
+        EEEE5151513F3F3F6363636F6F6F3737371111112121210B0B0B949494B7B7B7
+        383838000000808080FFFFFF6C10FFFFFFFFFFFFFFFFFFFFFFFFC6C6C6222222
+        2828284F4F4F5D5D5D7373738D8D8DC9C9C9FFFFFFFFFFFFD5D5D5898989E3E3
+        E3FFFFFF6C10FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFBCBCBC0B0B0B0D0D0DAFAF
+        AFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF6C10FFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB3B3B3848484F4F4F4FFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF6C10FFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFF6C10
+      }
+      Margin = 0
+      OnClick = btnAddressClick
+      TabOrder = 0
+      TabStop = False
+    end
+  end
+  object grpNotes: TGroupBox
+    Left = 5
+    Height = 50
+    Top = 355
+    Width = 625
+    Align = alClient
+    Caption = ' Примітки '
+    ClientHeight = 30
+    ClientWidth = 621
+    TabOrder = 3
+    object edtNotes: TMemo
+      Left = 5
+      Height = 23
+      Top = 0
+      Width = 610
+      Anchors = [akTop, akLeft, akRight]
+      Lines.Strings = (
+        ''
+      )
+      OnChange = OnFieldChange
+      OnClick = OnFieldChange
+      OnUTF8KeyPress = OnFieldUTF8KeyPress
+      TabOrder = 0
+    end
+  end
+  object sqlPerson: TSQLQuery
+    FieldDefs = <>
+    Database = dm.MySQLDB56
+    Transaction = dm.SaveTransaction
+    InsertSQL.Strings = (
+      'insert into NASELENNIA'
+      '( PRIZVYSHCHE,  IMIA,  PO_BATKOVI,  PIB_RODOVYI,  PIB_DAVALNYI,'
+      '  ADRESA,  MISTSE_NARODZHENNIA,  STAT,  DATA_NARODZHENNIA,  DATA_SMERTI,'
+      '  SERIIA_PASPORTU,  NOMER_PASPORTU,  DATA_PASPORTU,  ORGAN_PASPORTU,  IPN,'
+      '  YEDDR_NOMER,  NOMER_TELEFONU,  PRYMITKY,  ID_HROMADIANSTVO) values'
+      '(:Prizvyshche, :Imia, :Po_Batkovi, :PIB_Rodovyi, :PIB_Davalnyi,'
+      ' :Adresa, :Mistse_Narodzhennia, :Stat, :Data_Narodzhennia, :Data_Smerti,'
+      ' :Seriia_Pasportu, :Nomer_Pasportu, :Data_Pasportu, :Organ_Pasportu, :IPN,'
+      ' :YeDDR_Nomer, :Nomer_Telefonu, :Prymitky, :ID_Hromadianstvo)'
+    )
+    UpdateSQL.Strings = (
+      'update NASELENNIA'
+      'set'
+      '    PRIZVYSHCHE         = :Prizvyshche,'
+      '    IMIA                = :Imia,'
+      '    PO_BATKOVI          = :Po_Batkovi,'
+      '    PIB_RODOVYI         = :PIB_Rodovyi,'
+      '    PIB_DAVALNYI        = :PIB_Davalnyi,'
+      '    adresa              = :Adresa,'
+      '    MISTSE_NARODZHENNIA = :Mistse_Narodzhennia,'
+      '    STAT                = :Stat,'
+      '    DATA_NARODZHENNIA   = :Data_Narodzhennia,'
+      '    DATA_SMERTI         = :Data_Smerti,'
+      '    SERIIA_PASPORTU     = :Seriia_Pasportu,'
+      '    NOMER_PASPORTU      = :Nomer_Pasportu,'
+      '    DATA_PASPORTU       = :Data_Pasportu,'
+      '    ORGAN_PASPORTU      = :Organ_Pasportu,'
+      '    IPN                 = :IPN,'
+      '    YEDDR_NOMER         = :YeDDR_Nomer,'
+      '    NOMER_TELEFONU      = :Nomer_Telefonu,'
+      '    PRYMITKY            = :Prymitky,'
+      '    ID_HROMADIANSTVO    = :ID_Hromadianstvo'
+      'where'
+      '    ID = :ID'
+    )
+    Params = <>
+    left = 10
+    top = 50
+  end
+  object qGetData: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'id'
+        DataType = ftAutoInc
+        Precision = -1
+      end    
+      item
+        Name = 'id_hromadianstvo'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'prizvyshche'
+        DataType = ftString
+        Precision = -1
+        Size = 300
+      end    
+      item
+        Name = 'imia'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'po_batkovi'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'pib_rodovyi'
+        DataType = ftString
+        Precision = -1
+        Size = 600
+      end    
+      item
+        Name = 'pib_davalnyi'
+        DataType = ftString
+        Precision = -1
+        Size = 600
+      end    
+      item
+        Name = 'adresa'
+        DataType = ftString
+        Precision = -1
+        Size = 600
+      end    
+      item
+        Name = 'stat'
+        DataType = ftSmallint
+        Precision = -1
+      end    
+      item
+        Name = 'data_narodzhennia'
+        DataType = ftDate
+        Precision = -1
+      end    
+      item
+        Name = 'data_smerti'
+        DataType = ftDate
+        Precision = -1
+      end    
+      item
+        Name = 'mistse_narodzhennia'
+        DataType = ftString
+        Precision = -1
+        Size = 300
+      end    
+      item
+        Name = 'seriia_pasportu'
+        DataType = ftString
+        Precision = -1
+        Size = 12
+      end    
+      item
+        Name = 'nomer_pasportu'
+        DataType = ftString
+        Precision = -1
+        Size = 18
+      end    
+      item
+        Name = 'data_pasportu'
+        DataType = ftDate
+        Precision = -1
+      end    
+      item
+        Name = 'organ_pasportu'
+        DataType = ftString
+        Precision = -1
+        Size = 765
+      end    
+      item
+        Name = 'ipn'
+        DataType = ftString
+        Precision = -1
+        Size = 30
+      end    
+      item
+        Name = 'yeddr_nomer'
+        DataType = ftString
+        Precision = -1
+        Size = 60
+      end    
+      item
+        Name = 'nomer_telefonu'
+        DataType = ftString
+        Precision = -1
+        Size = 48
+      end    
+      item
+        Name = 'prymitky'
+        DataType = ftString
+        Precision = -1
+        Size = 600
+      end    
+      item
+        Name = 'old_id'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'old_simi'
+        DataType = ftInteger
+        Precision = -1
+      end>
+    Database = dm.MySQLDB56
+    Transaction = dm.MainTransaction
+    SQL.Strings = (
+      'select'
+      '    *'
+      'from NASELENNIA'
+      'where'
+      '    ID = :ID'
+      ''
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'id'
+        ParamType = ptInput
+      end>
+    left = 10
+    top = 20
+  end
+  object qCitizenship: TSQLQuery
+    FieldDefs = <>
+    Database = dm.MySQLDB56
+    Transaction = dm.MainTransaction
+    SQL.Strings = (
+      'select'
+      '    *'
+      'from HROMADIANSTVO'
+      'where (ID    >= 0)'
+      '  and (DOSTUP = 1)'
+      ''
+      'order by ID'
+    )
+    Params = <>
+    left = 540
+    top = 95
+  end
+  object dsCitizenship: TDataSource
+    DataSet = qCitizenship
+    left = 570
+    top = 95
+  end
+  object qGetHouse: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'id'
+        DataType = ftAutoInc
+        Precision = -1
+      end    
+      item
+        Name = 'id_hromadianstvo'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'prizvyshche'
+        DataType = ftString
+        Precision = -1
+        Size = 300
+      end    
+      item
+        Name = 'imia'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'po_batkovi'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'pib_rodovyi'
+        DataType = ftString
+        Precision = -1
+        Size = 600
+      end    
+      item
+        Name = 'pib_davalnyi'
+        DataType = ftString
+        Precision = -1
+        Size = 600
+      end    
+      item
+        Name = 'adresa'
+        DataType = ftString
+        Precision = -1
+        Size = 600
+      end    
+      item
+        Name = 'stat'
+        DataType = ftSmallint
+        Precision = -1
+      end    
+      item
+        Name = 'data_narodzhennia'
+        DataType = ftDate
+        Precision = -1
+      end    
+      item
+        Name = 'data_smerti'
+        DataType = ftDate
+        Precision = -1
+      end    
+      item
+        Name = 'mistse_narodzhennia'
+        DataType = ftString
+        Precision = -1
+        Size = 300
+      end    
+      item
+        Name = 'seriia_pasportu'
+        DataType = ftString
+        Precision = -1
+        Size = 12
+      end    
+      item
+        Name = 'nomer_pasportu'
+        DataType = ftString
+        Precision = -1
+        Size = 18
+      end    
+      item
+        Name = 'data_pasportu'
+        DataType = ftDate
+        Precision = -1
+      end    
+      item
+        Name = 'organ_pasportu'
+        DataType = ftString
+        Precision = -1
+        Size = 765
+      end    
+      item
+        Name = 'ipn'
+        DataType = ftString
+        Precision = -1
+        Size = 30
+      end    
+      item
+        Name = 'yeddr_nomer'
+        DataType = ftString
+        Precision = -1
+        Size = 60
+      end    
+      item
+        Name = 'nomer_telefonu'
+        DataType = ftString
+        Precision = -1
+        Size = 48
+      end    
+      item
+        Name = 'prymitky'
+        DataType = ftString
+        Precision = -1
+        Size = 600
+      end    
+      item
+        Name = 'old_id'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'old_simi'
+        DataType = ftInteger
+        Precision = -1
+      end>
+    Database = dm.MySQLDB56
+    Transaction = dm.MainTransaction
+    SQL.Strings = (
+      'select'
+      '    s.NAZVA,'
+      '    x.ADRESA'
+      'from HOSPODARSTVO x'
+      '    inner join SELO s on (x.ID_SELO = s.ID)'
+      'where'
+      '    x.ID = :ID'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'id'
+        ParamType = ptInput
+      end>
+    left = 40
+    top = 20
+  end
+end

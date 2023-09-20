@@ -1,0 +1,270 @@
+object frmGeneral_Data_Edit: TfrmGeneral_Data_Edit
+  Left = 300
+  Height = 250
+  Top = 125
+  Width = 400
+  BorderStyle = bsDialog
+  BorderWidth = 5
+  Caption = 'Загальні дані'
+  ClientHeight = 250
+  ClientWidth = 400
+  OnClose = FormClose
+  OnCloseQuery = FormCloseQuery
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  LCLVersion = '2.0.0.4'
+  object pnlButtons: TPanel
+    Left = 5
+    Height = 35
+    Top = 210
+    Width = 390
+    Align = alBottom
+    BevelOuter = bvNone
+    ClientHeight = 35
+    ClientWidth = 390
+    TabOrder = 4
+    object btnSave: TBitBtn
+      Left = 0
+      Height = 30
+      Top = 5
+      Width = 150
+      Caption = 'Зберегти'
+      Margin = 1
+      Images = dm.ilButtons
+      ImageIndex = 3
+      ImageWidth = 24
+      OnClick = btnSaveClick
+      Spacing = -1
+      TabOrder = 0
+    end
+    object btnClose: TBitBtn
+      Left = 240
+      Height = 30
+      Top = 5
+      Width = 150
+      Anchors = [akTop, akRight]
+      Cancel = True
+      Caption = 'Скасувати'
+      Margin = 1
+      Images = dm.ilButtons
+      ImageIndex = 6
+      ImageWidth = 24
+      OnClick = btnCloseClick
+      Spacing = -1
+      TabOrder = 1
+    end
+  end
+  object grpName: TGroupBox
+    Left = 5
+    Height = 50
+    Top = 5
+    Width = 390
+    Align = alTop
+    Caption = ' Назва '
+    ClientHeight = 30
+    ClientWidth = 386
+    TabOrder = 0
+    object edtName: TEdit
+      Left = 5
+      Height = 23
+      Top = 0
+      Width = 375
+      Anchors = [akTop, akLeft, akRight]
+      OnChange = OnFieldChange
+      OnUTF8KeyPress = OnFieldUTF8KeyPress
+      TabOrder = 0
+    end
+  end
+  object grpValue: TGroupBox
+    Left = 5
+    Height = 50
+    Top = 55
+    Width = 390
+    Align = alTop
+    Caption = ' Значення '
+    ClientHeight = 30
+    ClientWidth = 386
+    TabOrder = 1
+    object edtValue: TEdit
+      Left = 5
+      Height = 23
+      Top = 0
+      Width = 374
+      Anchors = [akTop, akLeft, akRight]
+      OnChange = OnFieldChange
+      OnUTF8KeyPress = OnFieldUTF8KeyPress
+      TabOrder = 0
+    end
+  end
+  object pnlAccessAndCode: TPanel
+    Left = 5
+    Height = 50
+    Top = 155
+    Width = 390
+    Align = alTop
+    BevelOuter = bvNone
+    ClientHeight = 50
+    ClientWidth = 390
+    TabOrder = 3
+    object rgAccess: TRadioGroup
+      Left = 0
+      Height = 50
+      Top = 0
+      Width = 200
+      Align = alLeft
+      AutoFill = True
+      Caption = ' Видимість '
+      ChildSizing.LeftRightSpacing = 6
+      ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+      ChildSizing.EnlargeVertical = crsHomogenousChildResize
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 2
+      ClientHeight = 30
+      ClientWidth = 196
+      Columns = 2
+      ItemIndex = 1
+      Items.Strings = (
+        'Приховано'
+        'Дозволено'
+      )
+      OnClick = OnFieldChange
+      OnUTF8KeyPress = OnFieldUTF8KeyPress
+      TabOrder = 0
+      TabStop = True
+    end
+    object grpID: TGroupBox
+      Left = 295
+      Height = 50
+      Top = 0
+      Width = 95
+      Align = alRight
+      Caption = ' ID '
+      ClientHeight = 30
+      ClientWidth = 91
+      TabOrder = 1
+      object edtID: TEdit
+        Left = 5
+        Height = 23
+        Top = 0
+        Width = 80
+        Alignment = taCenter
+        ReadOnly = True
+        TabStop = False
+        TabOrder = 0
+      end
+    end
+  end
+  object grpDescription: TGroupBox
+    Left = 5
+    Height = 50
+    Top = 105
+    Width = 390
+    Align = alTop
+    Caption = ' Опис '
+    ClientHeight = 30
+    ClientWidth = 386
+    TabOrder = 2
+    object edtDescription: TEdit
+      Left = 5
+      Height = 23
+      Top = 0
+      Width = 374
+      Anchors = [akTop, akLeft, akRight]
+      OnChange = OnFieldChange
+      OnUTF8KeyPress = OnFieldUTF8KeyPress
+      TabOrder = 0
+    end
+  end
+  object qGetData: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'id'
+        DataType = ftAutoInc
+        Precision = -1
+      end    
+      item
+        Name = 'pib'
+        DataType = ftString
+        Precision = -1
+        Size = 600
+      end    
+      item
+        Name = 'parol'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'dostup'
+        DataType = ftSmallint
+        Precision = -1
+      end>
+    Database = dm.MySQLDB56
+    Transaction = dm.MainTransaction
+    SQL.Strings = (
+      'select'
+      '    *'
+      'from ZAHALNI_DANI'
+      'where'
+      '    ID = :prm_ID'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'prm_ID'
+        ParamType = ptInput
+      end>
+    left = 10
+    top = 20
+  end
+  object sqlGeneral_Data: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'id'
+        DataType = ftAutoInc
+        Precision = -1
+      end    
+      item
+        Name = 'pib'
+        DataType = ftString
+        Precision = -1
+        Size = 600
+      end    
+      item
+        Name = 'parol'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'dostup'
+        DataType = ftSmallint
+        Precision = -1
+      end>
+    Database = dm.MySQLDB56
+    Transaction = dm.SaveTransaction
+    SQL.Strings = (
+      ''
+    )
+    InsertSQL.Strings = (
+      'insert into ZAHALNI_DANI'
+      '( NAZVA,  ZNACHENNIA,  OPYS,  DOSTUP) values'
+      '(:Nazva, :Znachennia, :Opys, :Dostup)'
+    )
+    UpdateSQL.Strings = (
+      'update ZAHALNI_DANI'
+      'set'
+      '    NAZVA      = :Nazva,'
+      '    ZNACHENNIA = :Znachennia,'
+      '    OPYS       = :Opys,'
+      '    DOSTUP     = :Dostup'
+      'where'
+      '    ID = :ID'
+    )
+    Params = <>
+    left = 10
+    top = 50
+  end
+end

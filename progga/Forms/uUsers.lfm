@@ -1,0 +1,263 @@
+object frmUsers: TfrmUsers
+  Left = 370
+  Height = 400
+  Top = 250
+  Width = 500
+  BorderWidth = 5
+  Caption = 'Перелік користувачів'
+  ClientHeight = 400
+  ClientWidth = 500
+  Constraints.MinHeight = 225
+  Constraints.MinWidth = 475
+  OnClose = FormClose
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  LCLVersion = '2.0.0.4'
+  object pnlButtons: TPanel
+    Left = 5
+    Height = 35
+    Top = 360
+    Width = 490
+    Align = alBottom
+    BevelOuter = bvNone
+    ClientHeight = 35
+    ClientWidth = 490
+    TabOrder = 2
+    object btnAdd: TBitBtn
+      Left = 0
+      Height = 30
+      Top = 5
+      Width = 150
+      Action = actAdd
+      Margin = 1
+      Images = dm.ilButtons
+      ImageIndex = 0
+      ImageWidth = 24
+      OnClick = actAddUpdExecute
+      Spacing = -1
+      TabOrder = 0
+    end
+    object btnUpd: TBitBtn
+      Left = 150
+      Height = 30
+      Top = 5
+      Width = 150
+      Action = actUpd
+      Margin = 1
+      Images = dm.ilButtons
+      ImageIndex = 1
+      ImageWidth = 24
+      OnClick = actAddUpdExecute
+      Spacing = -1
+      TabOrder = 1
+    end
+    object btnClose: TBitBtn
+      Left = 340
+      Height = 30
+      Top = 5
+      Width = 150
+      Anchors = [akTop, akRight]
+      Cancel = True
+      Caption = 'Вихід'
+      Margin = 1
+      Images = dm.ilButtons
+      ImageIndex = 7
+      ImageWidth = 24
+      OnClick = btnCloseClick
+      Spacing = -1
+      TabOrder = 2
+    end
+  end
+  object dbgUsers: TDBGrid
+    Left = 5
+    Height = 305
+    Top = 55
+    Width = 490
+    Align = alClient
+    Color = clWindow
+    Columns = <    
+      item
+        Alignment = taCenter
+        Font.Style = [fsBold]
+        MinSize = 35
+        MaxSize = 35
+        Title.Alignment = taCenter
+        Title.Caption = '<✔>'
+        Width = 35
+        FieldName = 'is_dostup'
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Caption = 'Прізвище Ім''я По батькові'
+        Width = 417
+        FieldName = 'pib'
+      end>
+    DataSource = dsUsers
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgDisableDelete, dgDisableInsert, dgCellHints, dgTruncCellHints, dgCellEllipsis, dgRowHighlight]
+    Scrollbars = ssVertical
+    TabOrder = 0
+    TitleFont.Style = [fsBold]
+    OnDblClick = dbgUsersDblClick
+    OnUTF8KeyPress = dbgUsersUTF8KeyPress
+  end
+  object pnlFilters: TPanel
+    Left = 5
+    Height = 50
+    Top = 5
+    Width = 490
+    Align = alTop
+    BevelOuter = bvNone
+    ClientHeight = 50
+    ClientWidth = 490
+    TabOrder = 1
+    object grpSearch: TGroupBox
+      Left = 290
+      Height = 50
+      Top = 0
+      Width = 200
+      Anchors = [akTop, akRight]
+      Caption = ' Пошук '
+      ClientHeight = 30
+      ClientWidth = 196
+      TabOrder = 0
+      object edtSearch: TEditButton
+        Left = 5
+        Height = 23
+        Top = 0
+        Width = 185
+        Anchors = [akTop, akLeft, akRight]
+        ButtonHint = 'Очистити поле пошуку'
+        ButtonWidth = 25
+        Glyph.Data = {
+          0A040000424D0C040000000000001A0000000C0000001200120001001800FFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF0000FFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFF0000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFD3D3D39F9F9FA8A8A8A9A9A9A9A9A9A9A9A9A9A9A9A5A5A5ABAAAAF0F0
+          F0FFFFFF0000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFACACAC3030303C3F
+          3E484B4A575A595C5F5D4548463739393E403F3E3F3FA2A2A2FFFFFF0000FFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFF9A9A9A1314144547467E8180595D5B72777666
+          6C698084827A7D7C414543383A39979797FFFFFF0000FFFFFFFFFFFFFFFFFFFF
+          FFFF8686860C0C0C2B2C2CBDBDBDFDFCFC808080171A19454746DCDCDCF4F4F4
+          686A691314149D9D9DFFFFFF0000FFFFFFFFFFFFFFFFFF707070010101000000
+          232323F2F2F2FFFFFFF1F2F17F8080BCBCBCFFFFFFFFFFFF8787870000009E9E
+          9EFFFFFF0000FFFFFFEDEDED606060181818141414151515090909494949E9EA
+          E9FFFFFFFFFFFFFEFEFEFBFBFB888888000000000000A0A0A0FFFFFF0000FFFF
+          FFBBBBBB2222225454544343434040403B3B3B050505737373FFFFFFFFFFFFFF
+          FFFFCDCDCD070707161616171717A0A0A0FFFFFF0000FFFFFFFBFBFB8B8B8B33
+          34345B5B5B4E4E4E323232474747CBCBCBFFFFFFFFFFFFFFFFFFF1F1F17D7D7D
+          232323393939A3A3A3FFFFFF6700FFFFFFFFFFFFFFFFFFA0A0A03A3A3A5B5B5B
+          626262E8E8E8FFFFFFFFFFFFBEBEBEEAEAEAFFFFFFFFFFFF8D8D8D222322A3A3
+          A3FFFFFF3E00FFFFFFFFFFFFFFFFFFFFFFFFB8B8B836363680807FF8F7F7FFFF
+          FFB4B4B43232326A6A6AFFFFFFFFFFFF9D9D9D2E2E2EA6A6A6FFFFFF4E00FFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFCECECE404241898989BEBDBD6F6F6F6B6A6B59
+          59599D9D9DAAAAAA5B5B5B5757579FA0A0FFFFFF7300FFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFDDDEDE7878786667675959596162626060604C4D4D474848
+          555655737474C5C6C6FFFFFF4C00FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFF9F9F9D7D8D8D5D6D5D8D8D8D8D8D8D8D8D8D8D8D8D4D4D4E0E0E0FDFD
+          FDFFFFFF7400FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF7700FFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF4500FFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFF2000
+        }
+        MaxLength = 0
+        NumGlyphs = 1
+        OnButtonClick = edtSearchButtonClick
+        OnChange = OnFilterChange
+        OnKeyPress = edtSearchKeyPress
+        PasswordChar = #0
+        Spacing = 0
+        TabOrder = 0
+      end
+    end
+    object cgAccess: TCheckGroup
+      Left = 0
+      Height = 50
+      Top = 0
+      Width = 200
+      AutoFill = True
+      Caption = ' Доступ до програми '
+      ChildSizing.LeftRightSpacing = 6
+      ChildSizing.TopBottomSpacing = 6
+      ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+      ChildSizing.EnlargeVertical = crsHomogenousChildResize
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 2
+      ClientHeight = 30
+      ClientWidth = 196
+      Columns = 2
+      Items.Strings = (
+        'Заборонено'
+        'Дозволено'
+      )
+      OnItemClick = cgAccessItemClick
+      TabOrder = 1
+      Data = {
+        020000000202
+      }
+    end
+  end
+  object qUsers: TSQLQuery
+    FieldDefs = <>
+    Database = dm.MySQLDB56
+    Transaction = dm.MainTransaction
+    SQL.Strings = (
+      'select'
+      '    ID,'
+      '    PIB,'
+      '    DOSTUP,'
+      #9'  if(DOSTUP > 0, ''+'', ''-'') IS_DOSTUP'
+      'from KORYSTUVACHI'
+      'where (1 = 1)'
+      ''
+      ''
+      'order by PIB'
+    )
+    Params = <>
+    left = 25
+    top = 130
+  end
+  object dsUsers: TDataSource
+    DataSet = qUsers
+    left = 55
+    top = 130
+  end
+  object tmrSearch: TTimer
+    Enabled = False
+    Interval = 500
+    OnTimer = tmrSearchTimer
+    left = 55
+    top = 100
+  end
+  object pUpmUsers: TPopupMenu
+    left = 85
+    top = 130
+    object pmAdd: TMenuItem
+      Action = actAdd
+    end
+    object pmUpd: TMenuItem
+      Action = actUpd
+    end
+  end
+  object ActionList: TActionList
+    left = 25
+    top = 100
+    object actAdd: TAction
+      Caption = 'Новий користувач'
+      Hint = 'Додати до бази даних інформацію про нового користувача'
+      OnExecute = actAddUpdExecute
+      ShortCut = 114
+    end
+    object actUpd: TAction
+      Caption = 'Корекція даних'
+      Hint = 'Оновити інформацію про користувача'
+      OnExecute = actAddUpdExecute
+      ShortCut = 115
+    end
+  end
+end

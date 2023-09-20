@@ -1,0 +1,317 @@
+object frmHouse_Edit: TfrmHouse_Edit
+  Left = 571
+  Height = 145
+  Top = 170
+  Width = 480
+  BorderStyle = bsDialog
+  BorderWidth = 5
+  Caption = 'Нове господарство'
+  ClientHeight = 145
+  ClientWidth = 480
+  OnCloseQuery = FormCloseQuery
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  LCLVersion = '2.0.2.0'
+  object pnlButtons: TPanel
+    Left = 5
+    Height = 35
+    Top = 105
+    Width = 470
+    Align = alBottom
+    BevelOuter = bvNone
+    ClientHeight = 35
+    ClientWidth = 470
+    TabOrder = 2
+    object btnSave: TBitBtn
+      Left = 0
+      Height = 30
+      Top = 5
+      Width = 150
+      Caption = 'Зберегти'
+      Margin = 1
+      Images = dm.ilButtons
+      ImageIndex = 3
+      ImageWidth = 24
+      OnClick = btnSaveClick
+      Spacing = -1
+      TabOrder = 0
+    end
+    object btnClose: TBitBtn
+      Left = 320
+      Height = 30
+      Top = 5
+      Width = 150
+      Anchors = [akTop, akRight]
+      Cancel = True
+      Caption = 'Скасувати'
+      Margin = 1
+      Images = dm.ilButtons
+      ImageIndex = 6
+      ImageWidth = 24
+      OnClick = btnCloseClick
+      Spacing = -1
+      TabOrder = 1
+    end
+  end
+  object pnlInfo: TPanel
+    Left = 5
+    Height = 50
+    Top = 5
+    Width = 470
+    Align = alTop
+    BevelOuter = bvNone
+    ClientHeight = 50
+    ClientWidth = 470
+    TabOrder = 0
+    object grpNumber: TGroupBox
+      Left = 0
+      Height = 50
+      Top = 0
+      Width = 125
+      Align = alLeft
+      Caption = ' Номер '
+      ClientHeight = 30
+      ClientWidth = 121
+      TabOrder = 0
+      object edtNumber: TEdit
+        Left = 5
+        Height = 23
+        Top = 0
+        Width = 110
+        Alignment = taCenter
+        OnChange = OnFieldChange
+        OnUTF8KeyPress = OnNumberUTF8KeyPress
+        TabOrder = 0
+      end
+    end
+    object grpVillage: TGroupBox
+      Left = 130
+      Height = 50
+      Top = 0
+      Width = 340
+      Align = alClient
+      Caption = ' Село '
+      ClientHeight = 30
+      ClientWidth = 336
+      TabOrder = 1
+      object lcbVillage: TDBLookupComboBox
+        Left = 5
+        Height = 23
+        Top = 0
+        Width = 325
+        Anchors = [akTop, akLeft, akRight]
+        AutoComplete = True
+        AutoDropDown = True
+        KeyField = 'ID'
+        ListField = 'NAZVA'
+        ListFieldIndex = 0
+        ListSource = dsVillage
+        LookupCache = True
+        OnSelect = OnFieldChange
+        OnUTF8KeyPress = OnFieldUTF8KeyPress
+        ScrollListDataset = True
+        Sorted = True
+        Style = csDropDownList
+        TabOrder = 0
+      end
+    end
+    object pnlInfo_Border: TPanel
+      Left = 125
+      Height = 50
+      Top = 0
+      Width = 5
+      Align = alLeft
+      BevelOuter = bvNone
+      TabOrder = 2
+    end
+  end
+  object grpAddress: TGroupBox
+    Left = 5
+    Height = 50
+    Top = 55
+    Width = 470
+    Align = alClient
+    Caption = ' Адреса '
+    ClientHeight = 30
+    ClientWidth = 466
+    TabOrder = 1
+    object edtAddress: TEdit
+      Left = 5
+      Height = 23
+      Top = 0
+      Width = 430
+      Alignment = taCenter
+      Color = cl3DLight
+      OnChange = OnFieldChange
+      OnUTF8KeyPress = OnFieldUTF8KeyPress
+      ReadOnly = True
+      TabStop = False
+      TabOrder = 1
+    end
+    object btnAddress: TBitBtn
+      Left = 435
+      Height = 23
+      Top = 0
+      Width = 25
+      Anchors = [akTop, akRight]
+      Glyph.Data = {
+        0A040000424D0C040000000000001A0000000C0000001200120001001800FFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFDFBFAFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF6C10FFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFAF9F8BFC0BE767F885F65787B8694
+        F0F4F5FFFFFFFFFFFFFFFFFF6C10FFFFFFFFFFFFFFFFFFF2F2F1F3F2F2FFFFFF
+        FFFFFFFFFFFFFFFFFFCCCECC232B384C3029987B5261422F5B5B65F8FEFFFFFF
+        FFFFFFFF6C10FFFFFFF0EFEFAAAAA982888C868B8FBFBFBEFFFFFFFFFFFFEAEA
+        EA808691482E1BF1CB5CF9E45DFDCD4790622EB2B2C0FFFFFFFFFFFF6C10FFFF
+        FF92999D2E33456353585C5058666C78DFE1E1B2B1B1919394504953C49C60FF
+        FFC5E8D691FFFFBBAA8F65484046FFFFFFFFFFFF6C10D8DDE2272228946A33EA
+        C364DEAD4A9978567B7F893B3C3C95969655575B5B4130D0C3A3DCD6CDB1ADA9
+        2F2F340000007D7D7DFEFEFE6C10727481815D2FFFFF84E3D15DFFF98CD7AF5A
+        61595CA0A3A9BABABAEBEDED41474E0300003D3C3D50515746484B1717152222
+        22AFAFAF6C10908B92AA895BFFFFD8FFF6D1FFF6C46B5630141720EBEBECFFFF
+        FFF2F2F2919292000000383A3B6D6D6D5C5B5A2E2E2E666666A6A6A66C10F0F2
+        F56757528F7351B9A98A7B694D3D3D42121619979796A5A5A5959595A0A0A02C
+        2C2B2A2A296060606666662727277B7B7AF0F0F06C10FFFFFFC6CCD000000015
+        1214565B656B6D702625244D4D4D9F9F9F9D9D9D9292923A3A3A1A1A1A545454
+        737374272727979797FFFFFF6C10FFFFFFFFFFFF8A8C8E0A0B0C5D5D5D6E6D6D
+        4040402929292F2F2F6B6B6B6D6D6D0808081818173F3F3E5E5E5F2B2B2B5B5B
+        5BFFFFFF6C10FFFFFFFFFFFFFFFFFF5050502D2D2D7171715D5D5D1A1A1A0C0C
+        0C3434342F2F2F3B3B3B3C3C3C3A3A394A4A49343434414141FEFEFE6C10FFFF
+        FFFFFFFFFFFFFFA4A4A41515155050504949483B3B3B4949494F4F4F46464632
+        32324242424A4A4A2A2A2A040404414141FFFFFF6C10FFFFFFFFFFFFFFFFFFEE
+        EEEE5151513F3F3F6363636F6F6F3737371111112121210B0B0B949494B7B7B7
+        383838000000808080FFFFFF6C10FFFFFFFFFFFFFFFFFFFFFFFFC6C6C6222222
+        2828284F4F4F5D5D5D7373738D8D8DC9C9C9FFFFFFFFFFFFD5D5D5898989E3E3
+        E3FFFFFF6C10FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFBCBCBC0B0B0B0D0D0DAFAF
+        AFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF6C10FFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB3B3B3848484F4F4F4FFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF6C10FFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFF6C10
+      }
+      Margin = 0
+      OnClick = btnAddressClick
+      TabOrder = 0
+      TabStop = False
+    end
+  end
+  object sqlHouse: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'id'
+        DataType = ftAutoInc
+        Precision = -1
+      end    
+      item
+        Name = 'pib'
+        DataType = ftString
+        Precision = -1
+        Size = 600
+      end    
+      item
+        Name = 'parol'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'dostup'
+        DataType = ftSmallint
+        Precision = -1
+      end>
+    Database = dm.MySQLDB56
+    Transaction = dm.SaveTransaction
+    SQL.Strings = (
+      ''
+    )
+    InsertSQL.Strings = (
+      'insert into HOSPODARSTVO'
+      '( ID_SELO,  NOMER,  ADRESA) values'
+      '(:ID_Selo, :Nomer, :Adresa)'
+    )
+    UpdateSQL.Strings = (
+      'update HOSPODARSTVO'
+      'set'
+      '    ID_SELO = :ID_Selo,'
+      '    NOMER   = :Nomer,'
+      '    ADRESA  = :Adresa'
+      'where'
+      '    ID = :ID'
+      ''
+      ''
+    )
+    Params = <>
+    left = 40
+    top = 20
+  end
+  object qGetData: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'id'
+        DataType = ftAutoInc
+        Precision = -1
+      end    
+      item
+        Name = 'id_sela'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'id_holova_hospodarstva'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'nomer'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'adresa'
+        DataType = ftString
+        Precision = -1
+        Size = 600
+      end>
+    Database = dm.MySQLDB56
+    Transaction = dm.MainTransaction
+    SQL.Strings = (
+      'select'
+      '    *'
+      'from HOSPODARSTVO'
+      'where (1 = 1)'
+      '  and (ID = :ID)'
+      'order by ID'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'ID'
+        ParamType = ptInput
+      end>
+    left = 10
+    top = 20
+  end
+  object qVillage: TSQLQuery
+    FieldDefs = <>
+    Database = dm.MySQLDB56
+    Transaction = dm.MainTransaction
+    SQL.Strings = (
+      'select'
+      '    ID,'
+      '    NAZVA'
+      'from SELO'
+      'where (1 = 1)'
+      '  and (ID >= 0)'
+      ''
+      'order by NAZVA'
+    )
+    Params = <>
+    left = 390
+    top = 20
+  end
+  object dsVillage: TDataSource
+    DataSet = qVillage
+    left = 420
+    top = 20
+  end
+end

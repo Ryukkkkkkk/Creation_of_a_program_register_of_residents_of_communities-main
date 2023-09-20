@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="12"/>
+    <ManyBuildModesSelection Value="Default,Release_Win64,Release_Win32"/>
+    <BuildModes Active="Default"/>
+    <Units Count="20">
+      <Unit0>
+        <Filename Value="socfix.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="SocFix"/>
+        <UsageCount Value="22"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="uMain.pp"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmMain"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UsageCount Value="22"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="udm.pp"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="dm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="136"/>
+        <CursorPos X="90" Y="155"/>
+        <UsageCount Value="22"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="Forms\uPassword.pp"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmPassword"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UsageCount Value="22"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="Forms\uPopulation.pp"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmPopulation"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UsageCount Value="22"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="Forms\uPopulation_Edit.pp"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmPopulation_Edit"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UsageCount Value="22"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="Forms\uUsers.pp"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmUsers"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UsageCount Value="22"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="Forms\uPassword_Edit.pp"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmPassword_Edit"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UsageCount Value="22"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="Forms\uUsers_Edit.pp"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmUsers_Edit"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UsageCount Value="22"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="Forms\uReference.pp"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmReference"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UsageCount Value="22"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="Forms\uReference_Edit.pp"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmReference_Edit"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UsageCount Value="22"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="Forms\uHouse.pp"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmHouse"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UsageCount Value="22"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="Forms\uHouse_Edit.pp"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmHouse_Edit"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UsageCount Value="22"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="Forms\uInhabitant_Edit.pp"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmInhabitant_Edit"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UsageCount Value="22"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="Forms\uLands_Edit.pp"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmLands_Edit"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UsageCount Value="22"/>
+      </Unit14>
+      <Unit15>
+        <Filename Value="Forms\uBackup.pp"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmBackup"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UsageCount Value="22"/>
+      </Unit15>
+      <Unit16>
+        <Filename Value="Forms\uGeneral_Data.pp"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmGeneral_Data"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UsageCount Value="22"/>
+      </Unit16>
+      <Unit17>
+        <Filename Value="Forms\uGeneral_Data_Edit.pp"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmGeneral_Data_Edit"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UsageCount Value="22"/>
+      </Unit17>
+      <Unit18>
+        <Filename Value="Forms\uAddress_Edit.pp"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmAddress_Edit"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UsageCount Value="22"/>
+      </Unit18>
+      <Unit19>
+        <Filename Value="Forms\uAbout.pp"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmAbout"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UsageCount Value="22"/>
+      </Unit19>
+    </Units>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes ActiveMode="default"/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>
